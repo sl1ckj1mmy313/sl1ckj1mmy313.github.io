@@ -1,6 +1,42 @@
-<form action="mailto:info@flowrenewal.org" method="post" enctype="text/plain">
-  <input type="text" name="full_name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message"></textarea>
-  <input type="submit" value="Send">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Flow Restoration Foundation</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="founder.html">Founder</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>We welcome aligned inquiries from funders, collaborators, and stewards of the mission. Please reach out through the form below or directly via email.</p>
+    
+    <form action="mailto:info@flowrenewal.org" method="post" enctype="text/plain">
+      <input type="text" name="full_name" placeholder="Your Name" required><br><br>
+      <input type="email" name="email" placeholder="Your Email" required><br><br>
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea><br><br>
+      <input type="submit" value="Send Message" class="btn">
+    </form>
+
+    <p>Or reach us directly at:</p>
+    <ul>
+      <li>Email: <a href="mailto:info@flowrenewal.org">info@flowrenewal.org</a></li>
+      <li>Support: <a href="mailto:support@flowrenewal.org">support@flowrenewal.org</a></li>
+    </ul>
+
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+</body>
+</html>
