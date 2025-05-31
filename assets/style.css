@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  text-align: center;
+  padding: 2em;
+}
+.logo {
+  width: 150px;
+  margin-bottom: 1em;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  margin: 0.5em;
+  background: #004d40;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
