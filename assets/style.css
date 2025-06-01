@@ -368,4 +368,11 @@ footer {
     text-align: left;       /* bullet text remains left-aligned */
     width: 100%;
   }
+
+  /* Shrink buttons on small screens */
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5em 1em;
+    margin: 0.5em 0; /* stack vertically if needed */
+  }
 }
