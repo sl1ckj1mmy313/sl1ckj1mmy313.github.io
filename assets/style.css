@@ -8,17 +8,20 @@ body {
   text-align: center;
   padding: 2em;
 }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cinzel', serif;
   line-height: 1.3;
 }
+
 p, li {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
 }
 
-
-/* Ensure container has breathing room at bottom */
+/* ===========================
+   CONTAINER
+   =========================== */
 .container {
   max-width: 800px;
   margin: auto;
@@ -71,7 +74,6 @@ p, li {
   margin-bottom: 1em;
 }
 
-/* Prevent selecting logo elements */
 #loader,
 .logo,
 img,
@@ -86,9 +88,9 @@ img,
   font-family: 'Cinzel', serif;
   text-transform: uppercase;
   text-align: center;
-  line-height: 1;        /* We'll handle line spacing manually */
+  line-height: 1;
   margin-top: 0.75em;
-  margin-bottom: 2em;    /* Spacing before paper-card */
+  margin-bottom: 2em;
   display: inline-block;
 }
 
@@ -97,7 +99,7 @@ img,
   font-weight: 600;
   letter-spacing: 0.025em;
   color: #e0f7ff;
-  margin-bottom: .1em; /* Tight stack into line2 */
+  margin-bottom: 0.1em;
 }
 
 .logo-stack .line2 {
@@ -105,7 +107,7 @@ img,
   font-weight: 700;
   letter-spacing: 0.05em;
   color: #e0f7ff;
-  margin-bottom: -0.25em; /* Slight pull toward line3 */
+  margin-bottom: -0.25em;
 }
 
 .logo-stack .line3 {
@@ -113,7 +115,7 @@ img,
   font-weight: 500;
   letter-spacing: 0.25em;
   color: #a5b8cc;
-  margin-top: 0.4em; /* Separate from line2 */
+  margin-top: 0.4em;
 }
 
 /* ===========================
@@ -179,9 +181,13 @@ img,
   background: #1b1e2e;
   border-radius: 10px;
   padding: 2em;
-  margin-bottom: 2em;
+  margin: 0 auto 2em;     /* Ensures centering for any width */
+  width: 90%;             /* Fills 90% of container on all screens */
+  max-width: 800px;       /* Never exceed container width */
   box-shadow: 0 0 12px rgba(65, 224, 255, 0.1);
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .paper-card h2 {
@@ -275,7 +281,7 @@ select:focus {
 
 textarea {
   min-height: 120px;
-  resize: vertical; /* allows manual expansion if needed */
+  resize: vertical;
   overflow-y: hidden;
 }
 
@@ -300,7 +306,7 @@ footer {
   /* Center the logo image */
   .logo {
     display: block;
-    margin: 0 auto 1em; /* auto left/right, 1em bottom for spacing */
+    margin: 0 auto 1em; /* auto left/right, 1em bottom */
   }
 
   /* Ensure the logo-stack stays centered below the logo */
@@ -309,7 +315,8 @@ footer {
     margin: 0 auto 2em; /* auto left/right, 2em bottom */
     text-align: center;
   }
-  /* Logo stack line adjustments*/
+
+  /* Logo stack line adjustments */
   .logo-stack .line1 {
     font-size: 1.8rem;
   }
@@ -331,7 +338,7 @@ footer {
     width: 100%;
   }
 
-  /* ===== NEW: Navbar stacks vertically ===== */
+  /* Navbar stacks vertically */
   .navbar ul {
     flex-direction: column;
     gap: 0.5em;
@@ -341,15 +348,12 @@ footer {
     padding: 0.5em 0;
   }
 
-  /* Paper cards span ~90% of viewport, center text, and wrap long words */
+  /* Paper cards span ~90% of viewport, center text, wrap long words */
   .paper-card {
     width: 90%;
-    max-width: 100%;
     margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
-    padding: 1em;         /* slightly reduced padding */
+    padding: 1em;         /* reduced padding */
     text-align: center;   /* center headings and paragraphs */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
   }
   .paper-card h2 {
     font-size: 1.4rem;
@@ -371,4 +375,3 @@ footer {
     width: 100%;
   }
 }
-
