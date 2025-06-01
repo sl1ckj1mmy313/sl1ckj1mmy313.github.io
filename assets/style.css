@@ -87,7 +87,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.025em;
   color: #e0f7ff;
-  margin-bottom: 1em; /* Tight stack into line2 */
+  margin-bottom: .1em; /* Tight stack into line2 */
 }
 
 .logo-stack .line2 {
