@@ -35,10 +35,11 @@ body {
 }
 
 .logo-stack .line3 {
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 400;
   letter-spacing: 0.2em;
   margin-top: 0.2em;
+  padding-bottom: 2em;
   color: #a5b8cc;
 }
 
