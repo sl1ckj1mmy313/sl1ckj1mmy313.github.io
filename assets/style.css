@@ -321,6 +321,9 @@ footer {
    RESPONSIVE MEDIA QUERIES
    =========================== */
 @media (max-width: 600px) {
+   header {
+      box-shadow: none;
+   }
   /* Center the logo image */
   .logo {
     display: block;
@@ -393,7 +396,7 @@ footer {
     border-radius: 4px;
   }
   .navbar ul li a:hover {
-    color: rgba(65, 224, 255, 0.1);
+     color: #41e0ff;
   }
 
   /* Paper cards: full width, center text, wrap long words */
