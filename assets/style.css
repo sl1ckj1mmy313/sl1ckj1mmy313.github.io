@@ -25,8 +25,15 @@ body {
   margin-bottom: 2em; /* Adds space before paper-card */
 }
 
+.logo-stack div {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+}
+
 .logo-stack .line1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #e0f7ff;
