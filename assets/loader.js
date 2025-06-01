@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
-  if (!loader) return;
 
   function showLoader() {
     loader.classList.remove("hidden");
