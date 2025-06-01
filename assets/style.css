@@ -107,3 +107,32 @@ code {
   text-align: center;
   margin-top: 3em;
 }
+
+input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+  background-color: #1b1e2e;
+  color: #e0f7ff;
+  border: 1px solid #25273a;
+  padding: 0.75em;
+  border-radius: 6px;
+  width: 80%;
+  margin: 0.5em auto;
+  font-size: 1em;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #a5b8cc;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #41e0ff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(65, 224, 255, 0.3);
+  background-color: #212438;
+}
+
