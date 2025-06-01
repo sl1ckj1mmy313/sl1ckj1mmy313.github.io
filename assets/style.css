@@ -116,7 +116,7 @@ img,
    HAMBURGER / MENU TOGGLE
    =========================== */
 .menu-toggle {
-  display: none; /* hidden on desktop */
+  display: none; /* hidden by default (desktop) */
   background: none;
   border: none;
   cursor: pointer;
@@ -125,6 +125,7 @@ img,
   top: 1rem;
   right: 1rem;
   z-index: 1000;
+  filter: drop-shadow(0 0 6px rgba(65, 224, 255, 0.5));
 }
 
 .menu-toggle img {
@@ -355,25 +356,28 @@ footer {
     width: 100%;
   }
 
-  /* Show hamburger button */
+  /* Show only the hamburger button, remove header’s original background & shadow */
   .menu-toggle {
     display: block;
   }
+  .navbar {
+    background: transparent;
+    box-shadow: none;
+    padding: 0.5em 0; /* shrink vertical padding slightly */
+  }
 
-  /* Navbar now participates in document flow and is hidden by default */
+  /* Hide the <ul> by default; will get shown when “.open” is toggled */
   .navbar ul {
     display: none;
     flex-direction: column;
-    /*background: #1b1e2e;
-    /* Remove absolute, let it push content down */
-    position: static;
-    margin-top: 1em;
+    background: #1b1e2e;       /* submenu background */
+    margin-top: 0.5em;        /* slight gap below button */
     border-radius: 8px;
-    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);*/
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     padding: 1em 0;
   }
 
-  /* When toggle button has “.open”, show the menu (and push content) */
+  /* When toggle is “.open”, show and push content below */
   .menu-toggle.open + .navbar ul {
     display: flex;
     gap: 1em;
@@ -386,13 +390,14 @@ footer {
   .navbar ul li a {
     display: block;
     padding: 0.5em 1em;
+    background: #0f111a;
     border-radius: 4px;
   }
   .navbar ul li a:hover {
-    color: rgba(65, 224, 255, 0.1);
+    background: rgba(65, 224, 255, 0.1);
   }
 
-  /* Paper cards: full width, center text, wrap words */
+  /* Paper cards: full width, center text, wrap long words */
   .paper-card {
     width: 90%;
     margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
