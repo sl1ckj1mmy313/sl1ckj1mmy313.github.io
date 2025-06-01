@@ -484,7 +484,7 @@ footer {
   }
 
   /* Shrink buttons on small screens */
-  .btn {
+/*  .btn {
     font-size: 0.9rem;
     padding: 0.5em 1em;
     margin: 0.5em; /* stack vertically if needed */
