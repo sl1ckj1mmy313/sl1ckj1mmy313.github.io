@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="20" fill="none" stroke="#41e0ff" stroke-width="2">
+    <animate attributeName="r" from="20" to="80" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" from="1" to="0" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="100" cy="100" r="20" fill="none" stroke="#726bff" stroke-width="2">
+    <animate attributeName="r" from="20" to="80" dur="2s" begin="1s" repeatCount="indefinite" />
+    <animate attributeName="opacity" from="1" to="0" dur="2s" begin="1s" repeatCount="indefinite" />
+  </circle>
+</svg>
