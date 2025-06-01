@@ -5,6 +5,11 @@ body {
   text-align: center;
   padding: 2em;
 }
+@media (max-width: 600px) {
+  .logo-stack .line2 { font-size: 2rem; }
+  .container { padding: 1em; }
+  input, textarea { width: 100%; }
+}
 
 #loader {
   position: fixed;
@@ -50,8 +55,8 @@ body {
   margin-bottom: 2em; /* Adds space before paper-card */
 }
 
-loader,
-.logo
+#loader,
+.logo,
 .logo-stack div {
   user-select: none;
   -webkit-user-select: none;
