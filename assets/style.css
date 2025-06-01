@@ -370,10 +370,10 @@ footer {
   .navbar ul {
     display: none;
     flex-direction: column;
-    background: #1b1e2e;       /* submenu background */
+    /*background: #1b1e2e;       /* submenu background */
     margin-top: 0.5em;        /* slight gap below button */
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);*/
     padding: 1em 0;
   }
 
