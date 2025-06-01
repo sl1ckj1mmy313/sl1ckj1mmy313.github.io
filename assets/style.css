@@ -65,6 +65,7 @@ body {
 /* Prevent selecting logo elements */
 #loader,
 .logo,
+img,
 .logo-stack div {
   user-select: none;           /* Standard */
   -webkit-user-select: none;   /* Safari */
