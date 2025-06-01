@@ -433,7 +433,7 @@ footer {
     border-bottom: none;
     box-shadow: none; /*0 2px 8px rgba(0, 0, 0, 0.3);*/
     padding: 1em 0;
-    width: 98vw;
+    width: 98%;
   }
 
   /* When toggle is “.open”, show and push content below */
