@@ -360,21 +360,20 @@ footer {
     display: block;
   }
 
-  /* Navbar dropdown hidden by default */
+  /* Navbar now participates in document flow and is hidden by default */
   .navbar ul {
     display: none;
     flex-direction: column;
     background: #1b1e2e;
-    position: absolute;
-    top: 3.5rem;
-    right: 1rem;
-    left: 1rem;
+    /* Remove absolute, let it push content down */
+    position: static;
+    margin-top: 1em;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     padding: 1em 0;
   }
 
-  /* When menu-toggle is open, show the list */
+  /* When toggle button has “.open”, show the menu (and push content) */
   .menu-toggle.open + .navbar ul {
     display: flex;
     gap: 1em;
@@ -394,7 +393,7 @@ footer {
     background: rgba(65, 224, 255, 0.1);
   }
 
-  /* Paper cards span ~90% of viewport, center text, wrap long words */
+  /* Paper cards: full width, center text, wrap words */
   .paper-card {
     width: 90%;
     margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
