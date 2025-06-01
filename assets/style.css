@@ -323,6 +323,7 @@ footer {
 @media (max-width: 600px) {
    header {
       box-shadow: none;
+      border-bottom: none;
    }
   /* Center the logo image */
   .logo {
@@ -366,7 +367,7 @@ footer {
   .navbar {
     background: transparent;
     box-shadow: none;
-    padding: 0.5em 0; /* shrink vertical padding slightly */
+    padding: 0.5em; /* shrink vertical padding slightly */
   }
 
   /* Hide the <ul> by default; will get shown when “.open” is toggled */
