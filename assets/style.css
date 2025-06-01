@@ -364,12 +364,12 @@ footer {
   .navbar ul {
     display: none;
     flex-direction: column;
-    background: #1b1e2e;
+    /*background: #1b1e2e;
     /* Remove absolute, let it push content down */
     position: static;
     margin-top: 1em;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);*/
     padding: 1em 0;
   }
 
@@ -389,7 +389,7 @@ footer {
     border-radius: 4px;
   }
   .navbar ul li a:hover {
-    color: rgba(65, 224, 255, 0.1);
+    background-color: rgba(65, 224, 255, 0.1);
   }
 
   /* Paper cards: full width, center text, wrap words */
