@@ -336,6 +336,7 @@ footer {
     display: block;
     margin: 0 auto 2em; /* auto left/right, 2em bottom */
     text-align: center;
+    width: auto;
   }
 
   /* Logo stack line adjustments */
@@ -344,6 +345,7 @@ footer {
   }
   .logo-stack .line2 {
     font-size: 1.8rem;
+    margin-bottom: -0.15em; /* was -0.25em; pull just a little */
   }
   .logo-stack .line3 {
     font-size: 1rem;
