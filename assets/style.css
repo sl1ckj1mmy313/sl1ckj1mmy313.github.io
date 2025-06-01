@@ -24,7 +24,7 @@ h1 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1b1e2e;              /* same dark gray used in paper‐cards */
+  background: #1b1e2e;              /* dark gray track */
   border-radius: 5px;
 }
 
@@ -33,7 +33,7 @@ h1 {
     180deg,
     #41e0ff 0%,
     #726bff 100%
-  );                                   /* blue→purple gradient */
+  );
   border-radius: 5px;
 }
 
@@ -42,13 +42,13 @@ h1 {
     180deg,
     #72dfff 0%,
     #9c8eff 100%
-  );                                   /* slightly lighter on hover */
+  );
 }
 
 /* For Firefox */
 body {
   scrollbar-width: thin;
-  scrollbar-color: #41e0ff #1b1e2e;   /* thumb (blue) and track (dark) */
+  scrollbar-color: #41e0ff #1b1e2e; /* thumb & track */
 }
 
 /* For Edge Legacy */
@@ -58,7 +58,7 @@ body {
   }
 }
 
-/* Optional: styling when focused (e.g. clicking in a scrollable <div>) */
+/* Remove default focus outline */
 :focus {
   outline: none;
 }
@@ -122,10 +122,10 @@ body {
 .logo,
 img,
 .logo-stack div {
-  user-select: none;           /* Standard */
-  -webkit-user-select: none;   /* Safari */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* IE/Edge Legacy */
+  user-select: none;           /* disable text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .logo-stack {
@@ -166,7 +166,7 @@ img,
    HAMBURGER / MENU TOGGLE
    =========================== */
 .menu-toggle {
-  display: none; /* hidden by default (desktop) */
+  display: none; /* only shown on mobile */
   background: none;
   border: none;
   cursor: pointer;
@@ -250,9 +250,9 @@ img,
   background: #1b1e2e;
   border-radius: 10px;
   padding: 2em;
-  margin: 0 auto 2em;     /* Ensures centering for any width */
-  width: 90%;             /* Fills 90% of container on all screens */
-  max-width: 800px;       /* Never exceed container width */
+  margin: 0 auto 2em;      /* centered in container */
+  width: 90%;
+  max-width: 800px;
   box-shadow: 0 0 12px rgba(65, 224, 255, 0.1);
   text-align: left;
   word-wrap: break-word;
@@ -376,27 +376,28 @@ footer {
       box-shadow: none;
       border-bottom: none;
    }
-  /* Center the logo image */
+
+  /* Center logo */
   .logo {
     display: block;
-    margin: 0 auto 1em; /* auto left/right, 1em bottom */
+    margin: 0 auto 1em;
   }
 
-  /* Ensure the logo-stack stays centered below the logo */
+  /* Center logo‐stack text */
   .logo-stack {
     display: block;
-    margin: 0 auto 2em; /* auto left/right, 2em bottom */
+    margin: 0 auto 2em;
     text-align: center;
     width: auto;
   }
 
-  /* Logo stack line adjustments */
+  /* Adjust logo‐stack font sizes */
   .logo-stack .line1 {
     font-size: 1.6rem;
   }
   .logo-stack .line2 {
     font-size: 1.6rem;
-    margin-bottom: -0.15em; /* was -0.25em; pull just a little */
+    margin-bottom: -0.15em; /* slight upward pull */
   }
   .logo-stack .line3 {
     font-size: 1rem;
@@ -407,86 +408,89 @@ footer {
     padding: 1em;
   }
 
-  /* Inputs / textareas full width */
+  /* Inputs/textareas full width */
   input,
   textarea {
     width: 100%;
   }
 
-  /* Show only the hamburger button, remove header’s original background & shadow */
+  /* Show hamburger, hide default menu background/shadow */
   .menu-toggle {
     display: block;
   }
   .navbar {
     background: transparent;
     box-shadow: none;
-    padding: 0.5em; /* shrink vertical padding slightly */
+    padding: 0.5em; /* slightly less vertical space */
   }
 
-  /* Hide the <ul> by default; will get shown when “.open” is toggled */
+  /* Hide the <ul> by default; when .open, show it full‐width */
   .navbar ul {
     display: none;
     flex-direction: column;
-    background: transparent;       /* submenu background */
-    margin-top: 0.5em;        /* slight gap below button */
-    border-radius: 8px;
-    border-bottom: none;
-    box-shadow: none; /*0 2px 8px rgba(0, 0, 0, 0.3);*/
-    padding: 1em 0;
-  }
-
-  /* When toggle is “.open”, show and push content below */
-  .menu-toggle.open + .navbar ul {
-    display: flex;
-    gap: 1em;
-    border-bottom: 1px solid rgba(65, 224, 255, 0.3);
+    background: #1b1e2e;   /* full‐width dark background */
+    margin: 0;             /* remove extra gaps */
+    padding: 0.5em 0;
+    width: 100vw;          /* span entire viewport */
+    position: absolute;
+    top: 100%;             /* directly under navbar */
+    left: 0;
+    border-radius: 0;      /* no rounded corners */
     box-shadow: 0 2px 6px rgba(65, 224, 255, 0.25);
   }
 
-  /* Adjust each menu item */
+  /* When toggle is “.open”, reveal full‐width menu */
+  .menu-toggle.open + .navbar ul {
+    display: flex;
+    gap: 0;                /* no horizontal gap—stack vertically */
+    border-bottom: none;
+  }
+
+  /* Individual menu items styling */
   .navbar ul li {
     margin: 0.5em 0;
   }
   .navbar ul li a {
     display: block;
-    padding: 0.5em;
-    border-radius: 4px;
+    padding: 0.75em 1em;
+    border-radius: 0;
+    text-align: center;
   }
   .navbar ul li a:hover {
-     color: #41e0ff;
+    color: #41e0ff;
+    background: rgba(65, 224, 255, 0.05);
   }
 
   /* Paper cards: full width, center text, wrap long words */
   .paper-card {
-    width: 90%;
-    margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
-    padding: 1em;         /* reduced padding */
-    text-align: center;   /* center headings and paragraphs */
+    width: 100%;
+    margin: 0 auto 1.5em;
+    padding: 1.5em;      /* a bit more padding for readability */
+    text-align: center;
   }
   .paper-card h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   .paper-card p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin: 0.5em 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0.75em 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
   .paper-card ul {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin: 0.5em 0;
-    padding-left: 1.2em;    /* keep bullets indented */
-    display: block;
-    text-align: left;       /* bullet text remains left-aligned */
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0.75em 0;
+    padding-left: 1.5em;
+    text-align: left;
     width: 100%;
   }
 
-  /* Shrink buttons on small screens */
-/*  .btn {
-    font-size: 0.9rem;
-    padding: 0.5em 1em;
-    margin: 0.5em; /* stack vertically if needed */
+  /* Shrink/adjust buttons */
+  .btn {
+    font-size: 1rem;
+    padding: 0.75em 1.25em;
+    margin: 0.5em auto;
   }
 }
