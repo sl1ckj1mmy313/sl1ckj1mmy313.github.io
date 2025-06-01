@@ -178,7 +178,7 @@ textarea {
   overflow-y: hidden;
 }
 
-.site-footer {
+footer {
   margin-top: 4em;
   padding: 2em 0;
   border-top: 1px solid rgba(65, 224, 255, 0.1);
