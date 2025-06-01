@@ -1,5 +1,4 @@
 const loader = document.getElementById("loader");
-if (!loader) return; // Exit if loader not found
 
 
 function showLoader() {
