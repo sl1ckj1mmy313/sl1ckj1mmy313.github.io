@@ -136,3 +136,8 @@ select:focus {
   background-color: #212438;
 }
 
+textarea {
+  min-height: 120px;
+  resize: vertical; /* allows manual expansion if needed */
+  overflow-y: hidden;
+}
