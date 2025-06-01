@@ -27,17 +27,17 @@ body {
 }
 
 .logo-stack .line1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  margin-bottom: -1em;  /* tightly stacked onto line 2 */
+  margin-bottom: -0.4em;  /* tightly stacked onto line 2 */
 }
 
 .logo-stack .line2 {
   font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  margin-bottom: -1.2em;  /* gentle transition to foundation */
+  margin-bottom: -0.2em;  /* gentle transition to foundation */
 }
 
 .logo-stack .line3 {
@@ -47,6 +47,7 @@ body {
   color: #a5b8cc;
   margin-top: 0.6em;
 }
+
 
 
 
