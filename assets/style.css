@@ -111,7 +111,7 @@ code {
 input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
-  background-color: #1b1e2e;
+  background-color: rgba(36, 40, 60, 0.92);
   color: #e0f7ff;
   border: 1px solid #25273a;
   padding: 0.75em;
