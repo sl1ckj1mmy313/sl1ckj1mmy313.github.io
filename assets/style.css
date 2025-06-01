@@ -22,7 +22,7 @@ body {
   text-transform: uppercase;
   line-height: 1.25;
   margin-top: 0.75em;
-  margin-bottom: 2.5em; /* Adds space before paper-card */
+  margin-bottom: 2em; /* Adds space before paper-card */
 }
 
 .logo-stack .line1 {
