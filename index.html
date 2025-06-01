@@ -16,7 +16,13 @@
     <img src="assets/loader.svg" alt="Loading..." loading="lazy" />
   </div>
   
-  <header class="navbar">
+<header>
+  <!-- Hamburger / Close button -->
+  <button class="menu-toggle" aria-label="Toggle menu">
+    <img src="assets/menu.svg" alt="Open Menu" />
+  </button>
+
+  <nav class="navbar">
     <nav>
       <ul>
         <li> </li>
@@ -75,7 +81,8 @@
     </footer>
   </div>
   
-  <!-- Load loader.js after DOM is parsed -->
+  <!-- Load .js after DOM is parsed -->
   <script src="assets/loader.js" defer></script>
+  <script src="assets/menubtn.js" defer></script>
 </body>
 </html>
