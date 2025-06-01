@@ -341,26 +341,34 @@ footer {
     padding: 0.5em 0;
   }
 
-  /* ===== NEW: Paper cards span full width, center text ===== */
+  /* Paper cards span ~90% of viewport, center text, and wrap long words */
   .paper-card {
-    width: 100%;
-    padding: 1em;
-    margin-bottom: 1.5em;
-    text-align: center;
+    width: 90%;
+    max-width: 100%;
+    margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
+    padding: 1em;         /* slightly reduced padding */
+    text-align: center;   /* center headings and paragraphs */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
   .paper-card h2 {
     font-size: 1.4rem;
   }
-  .paper-card p,
+  .paper-card p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0.5em 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
   .paper-card ul {
     font-size: 0.95rem;
     line-height: 1.4;
     margin: 0.5em 0;
-  }
-  .paper-card ul {
-    padding-left: 1em;
-    display: inline-block; /* center bullet list */
-    text-align: left;
+    padding-left: 1.2em;    /* keep bullets indented */
+    display: block;
+    text-align: left;       /* bullet text remains left-aligned */
+    width: 100%;
   }
 }
 
