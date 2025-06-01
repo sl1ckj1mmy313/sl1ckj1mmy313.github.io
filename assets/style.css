@@ -8,7 +8,7 @@ body {
   text-align: center;
   padding: 2em;
 }
-h {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Cinzel', serif;
   line-height: 1.3;
 }
@@ -16,6 +16,7 @@ p, li {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
 }
+
 
 /* Ensure container has breathing room at bottom */
 .container {
