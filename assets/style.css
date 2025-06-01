@@ -19,29 +19,33 @@ body {
 .logo-stack {
   font-family: 'Cinzel', serif;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   line-height: 1.25;
-  margin-top: 0.5em;
+  margin-top: 0.75em;
+  margin-bottom: 2.5em; /* Adds space before paper-card */
 }
 
 .logo-stack .line1 {
-  font-size: 5em;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #e0f7ff;
 }
 
 .logo-stack .line2 {
-  font-size: 4em;
+  font-size: 2.4rem;
   font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #e0f7ff;
 }
 
 .logo-stack .line3 {
-  font-size: 2em;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  margin-top: 0.1em;
-  padding-bottom: 2em;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
   color: #a5b8cc;
+  margin-top: 0.4em;
 }
+
 
 .btn {
   display: inline-block;
