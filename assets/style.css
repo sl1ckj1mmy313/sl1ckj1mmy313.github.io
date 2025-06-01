@@ -27,21 +27,21 @@ body {
 }
 
 .logo-stack .line1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   margin-bottom: -1em;  /* tightly stacked onto line 2 */
 }
 
 .logo-stack .line2 {
-  font-size: 2.6rem;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   margin-bottom: -0.1.2em;  /* gentle transition to foundation */
 }
 
 .logo-stack .line3 {
-  font-size: 1.1rem;
+  font-size: .6rem;
   font-weight: 500;
   letter-spacing: 0.35em;
   color: #a5b8cc;
