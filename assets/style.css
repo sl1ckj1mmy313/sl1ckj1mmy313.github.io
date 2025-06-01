@@ -30,6 +30,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #e0f7ff;
+  margin-bottom: -0.4em;  /* tightly stacked onto line 2 */
 }
 
 .logo-stack .line2 {
@@ -37,6 +38,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.05em;
   color: #e0f7ff;
+  margin-bottom: -0.2em;  /* gentle transition to foundation */
 }
 
 .logo-stack .line3 {
