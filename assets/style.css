@@ -50,6 +50,8 @@ body {
   margin-bottom: 2em; /* Adds space before paper-card */
 }
 
+loader,
+.logo
 .logo-stack div {
   user-select: none;
   -webkit-user-select: none;
