@@ -288,6 +288,19 @@ footer {
    RESPONSIVE MEDIA QUERIES
    =========================== */
 @media (max-width: 600px) {
+  /* Center the logo image */
+  .logo {
+    display: block;
+    margin: 0 auto 1em; /* auto left/right, 1em bottom for spacing */
+  }
+
+  /* Ensure the logo-stack stays centered below the logo */
+  .logo-stack {
+    display: block;
+    margin: 0 auto 2em; /* auto left/right, 2em bottom */
+    text-align: center;
+  }
+  /* Logo stack line adjustments*/
   .logo-stack .line1 {
     font-size: 1.8rem;
   }
@@ -297,11 +310,48 @@ footer {
   .logo-stack .line3 {
     font-size: 1rem;
   }
+
+  /* Container padding */
   .container {
     padding: 1em;
   }
+
+  /* Inputs / textareas full width */
   input,
   textarea {
     width: 100%;
   }
+
+  /* ===== NEW: Navbar stacks vertically ===== */
+  .navbar ul {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .navbar ul li a {
+    display: block;
+    padding: 0.5em 0;
+  }
+
+  /* ===== NEW: Paper cards span full width, center text ===== */
+  .paper-card {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    text-align: center;
+  }
+  .paper-card h2 {
+    font-size: 1.4rem;
+  }
+  .paper-card p,
+  .paper-card ul {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 0.5em 0;
+  }
+  .paper-card ul {
+    padding-left: 1em;
+    display: inline-block; /* center bullet list */
+    text-align: left;
+  }
 }
+
