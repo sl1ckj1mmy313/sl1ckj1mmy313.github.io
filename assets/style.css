@@ -58,11 +58,12 @@ body {
 #loader,
 .logo,
 .logo-stack div {
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
+  user-select: none;           /* Standard */
+  -webkit-user-select: none;   /* Safari */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge Legacy */
 }
+
 
 .logo-stack .line1 {
   font-size: 2.6rem;
