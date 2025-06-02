@@ -390,7 +390,6 @@ footer {
     display: block;
     margin: 0 auto 1em;
   }
-
   .logo-stack {
     display: block;
     margin: 0 auto 2em;
@@ -427,22 +426,18 @@ footer {
     padding: 0.5em 0; /* only vertical padding */
   }
 
-  /* 7) Hide the <ul> by default; give it an absolute, full‐width panel */
+  /* 7) Hide the <ul> by default; anchor it in normal flow (no absolute) */
   .navbar ul {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #1b1e2e;
     flex-direction: column;
     margin: 0;
     padding: 0.75em 0;
+    background: #1b1e2e;
     box-shadow: 0 2px 6px rgba(65, 224, 255, 0.25);
     border-radius: 0;
   }
 
-  /* 8) When toggle is “.open”, reveal it full‐width */
+  /* 8) When toggle is “.open”, reveal it (in-flow), pushing content down */
   .menu-toggle.open + .navbar ul {
     display: flex;
     gap: 0;
@@ -464,10 +459,10 @@ footer {
     color: #41e0ff;
   }
 
-  /* 10) “Paper‐card” must occupy the full viewport width (minus any safe margin) */
+  /* 10) “Paper-card” must occupy the full viewport width (minus any safe margin) */
   .paper-card {
     width: 100%;
-    max-width: none;      /* override any earlier max‐width */
+    max-width: none;      /* override any earlier max-width */
     margin: 0 auto 1.5em;
     padding: 1.5em;
     text-align: center;
