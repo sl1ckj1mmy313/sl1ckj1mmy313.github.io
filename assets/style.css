@@ -419,6 +419,9 @@ footer {
   /* 6) Show hamburger, strip desktop navbar styling */
   .menu-toggle {
     display: block;
+    position: sticky; 
+    top: 0; 
+    z-index: 900;
   }
   .navbar {
     position: sticky; 
