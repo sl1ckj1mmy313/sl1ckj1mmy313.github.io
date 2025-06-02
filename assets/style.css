@@ -424,6 +424,7 @@ footer {
     background: transparent;
     box-shadow: none;
     padding: 0.5em 0; /* only vertical padding */
+    border: none;
   }
 
   /* 7) Hide the <ul> by default; anchor it in normal flow (no absolute) */
@@ -432,7 +433,7 @@ footer {
     flex-direction: column;
     margin: 0;
     padding: 0.75em 0;
-    background: #1b1e2e;
+    background: transparent;
     box-shadow: 0 2px 6px rgba(65, 224, 255, 0.25);
     border-radius: 0;
   }
