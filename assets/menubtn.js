@@ -1,11 +1,17 @@
 // assets/menubtn.js
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.querySelector('.menu-toggle');
-  const iconImg   = toggleBtn.querySelector('img');
+  const iconImg = toggleBtn.querySelector('img');
+  const header = document.querySelector('header.navbar');
 
+  // Track last scroll position
+  let lastScrollY = window.pageYOffset;
+  let ticking = false;
+
+  // 1) Toggle mobile menu open/close
   toggleBtn.addEventListener('click', () => {
     const isOpen = toggleBtn.classList.toggle('open');
-
     if (isOpen) {
       iconImg.src = 'assets/close.svg';
       iconImg.alt = 'Close Menu';
@@ -15,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close menu when any link is clicked
+  // 2) Close menu when any nav link clicked (mobile)
   document.querySelectorAll('.navbar ul li a').forEach(link => {
     link.addEventListener('click', () => {
       if (toggleBtn.classList.contains('open')) {
@@ -25,18 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
-  // HIDE/SHOW header + menu-toggle on scroll:
+
+  // 3) Hide/Show header + button on scroll
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
+        const currentScrollY = window.pageYOffset;
         if (currentScrollY > lastScrollY && currentScrollY > 50) {
-          // scrolling down
+          // Scrolling down
           document.body.classList.add('scroll-down');
           document.body.classList.remove('scroll-up');
         } else if (currentScrollY < lastScrollY) {
-          // scrolling up
+          // Scrolling up
           document.body.classList.add('scroll-up');
           document.body.classList.remove('scroll-down');
         }
