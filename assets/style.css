@@ -433,7 +433,7 @@ footer {
     border-bottom: none;
     box-shadow: none; /*0 2px 8px rgba(0, 0, 0, 0.3);*/
     padding: 1em 0;
-    width: 100vw;
+    width: 100%;
     left: 0;
   }
 
@@ -460,7 +460,7 @@ footer {
 
   /* Paper cards: full width, center text, wrap long words */
   .paper-card {
-    width: 100vw;
+    width: 100%;
     margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
     padding: 1.5em;         /* reduced padding */
     text-align: center;   /* center headings and paragraphs */
