@@ -25,4 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  
+  // HIDE/SHOW header + menu-toggle on scroll:
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+          // scrolling down
+          document.body.classList.add('scroll-down');
+          document.body.classList.remove('scroll-up');
+        } else if (currentScrollY < lastScrollY) {
+          // scrolling up
+          document.body.classList.add('scroll-up');
+          document.body.classList.remove('scroll-down');
+        }
+        lastScrollY = currentScrollY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
 });
