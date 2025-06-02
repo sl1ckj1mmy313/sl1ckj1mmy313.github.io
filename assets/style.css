@@ -372,122 +372,130 @@ footer {
    RESPONSIVE MEDIA QUERIES
    =========================== */
 @media (max-width: 600px) {
-   header {
-      box-shadow: none;
-      border-bottom: none;
-   }
+  /* Remove header borders/shadows */
+  header {
+    box-shadow: none;
+    border-bottom: none;
+  }
+
+  /* Shrink overall body padding a bit on mobile */
+  body {
+    padding: 1em;
+  }
+
   /* Center the logo image */
   .logo {
     display: block;
-    margin: 0 auto 1em; /* auto left/right, 1em bottom */
+    margin: 0 auto 1em;
   }
 
-  /* Ensure the logo-stack stays centered below the logo */
+  /* Keep the logo‐stack centered under the logo */
   .logo-stack {
     display: block;
-    margin: 0 auto 2em; /* auto left/right, 2em bottom */
+    margin: 0 auto 2em;
     text-align: center;
     width: auto;
   }
-
-  /* Logo stack line adjustments */
   .logo-stack .line1 {
     font-size: 1.6rem;
   }
   .logo-stack .line2 {
     font-size: 1.6rem;
-    margin-bottom: -0.15em; /* was -0.25em; pull just a little */
+    margin-bottom: -0.15em;
   }
   .logo-stack .line3 {
     font-size: 1rem;
   }
 
-  /* Container padding */
+  /* Container horizontal padding removed (body already has 1em) */
   .container {
-    padding: 1em;
+    padding: 0;
+    margin-bottom: 1.5em;
   }
 
-  /* Inputs / textareas full width */
+  /* Inputs / textareas take full width of viewport minus body padding */
   input,
   textarea {
     width: 100%;
   }
 
-  /* Show only the hamburger button, remove header’s original background & shadow */
+  /* Show only the hamburger button; hide desktop menu styling */
   .menu-toggle {
     display: block;
   }
   .navbar {
     background: transparent;
     box-shadow: none;
-    padding: 0.5em; /* shrink vertical padding slightly */
+    padding: 0.5em; /* slight vertical cushion */
   }
 
-  /* Hide the <ul> by default; will get shown when “.open” is toggled */
+  /* Hide the <ul> by default; will be displayed when “.open” */
   .navbar ul {
     display: none;
     flex-direction: column;
-    background: transparent;       /* submenu background */
-    margin-top: 0.5em;        /* slight gap below button */
-    border-radius: 8px;
-    border-bottom: none;
-    box-shadow: none; /*0 2px 8px rgba(0, 0, 0, 0.3);*/
-    padding: 1em 0;
-    width: 98%;
+    background: #1b1e2e;   /* solid dark panel */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;          /* truly span viewport width */
+    margin: 0;
+    padding: 0.75em 0;     /* vertical padding for list */
+    box-shadow: 0 2px 6px rgba(65, 224, 255, 0.25);
+    border-radius: 0;
   }
 
-  /* When toggle is “.open”, show and push content below */
+  /* When toggle is “open”, reveal that full-width menu */
   .menu-toggle.open + .navbar ul {
     display: flex;
-    gap: 1em;
-    border-bottom: 1px solid rgba(65, 224, 255, 0.3);
-    box-shadow: 0 2px 6px rgba(65, 224, 255, 0.25);
+    gap: 0;                /* no horizontal gaps—stack items */
+    border-bottom: none;
   }
 
-  /* Adjust each menu item */
+  /* Each menu item now spans the full width */
   .navbar ul li {
-    margin: 0.5em 0;
+    margin: 0.4em 0;
   }
   .navbar ul li a {
     display: block;
-    padding: 0.5em;
-    border-radius: 4px;
+    padding: 0.75em 1em;
+    border-radius: 0;
+    text-align: center;
   }
   .navbar ul li a:hover {
-     color: #41e0ff;
+    color: #41e0ff;
+    background: rgba(65, 224, 255, 0.05);
   }
 
-  /* Paper cards: full width, center text, wrap long words */
+  /* PAPER CARDS: truly full-width, with comfortable padding */
   .paper-card {
     width: 100%;
-    margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
-    padding: 1.5em;         /* reduced padding */
-    text-align: center;   /* center headings and paragraphs */
+    margin: 0 auto 1.5em;
+    padding: 1.5em;
+    text-align: center;
   }
   .paper-card h2 {
     font-size: 1.5rem;
   }
   .paper-card p {
     font-size: 1rem;
-    line-height: 1.4;
-    margin: 0.5em 0;
+    line-height: 1.5;
+    margin: 0.75em 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
   .paper-card ul {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    margin: 0.5em 0;
-    padding-left: 1.2em;    /* keep bullets indented */
-    display: block;
-    text-align: left;       /* bullet text remains left-aligned */
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0.75em 0;
+    padding-left: 1.5em;   /* keep bullets indented */
+    text-align: left;
     width: 100%;
   }
 
-  /* Shrink buttons on small screens */
-/*  .btn {
-    font-size: 0.9rem;
-    padding: 0.5em 1em;
-    margin: 0.5em; /* stack vertically if needed */
+  /* Slightly larger buttons with full-width center alignment */
+  .btn {
+    font-size: 1rem;
+    padding: 0.75em 1.25em;
+    margin: 0.5em auto;
   }
 }
