@@ -460,7 +460,7 @@ footer {
 
   /* Paper cards: full width, center text, wrap long words */
   .paper-card {
-    width: 100%;
+    width: 100vw;
     margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
     padding: 1.5em;         /* reduced padding */
     text-align: center;   /* center headings and paragraphs */
