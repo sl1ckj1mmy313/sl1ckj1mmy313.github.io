@@ -6,7 +6,8 @@ body {
   background: #0f111a;
   color: #e0f7ff;
   text-align: center;
-  *padding: 0.5em;*
+  padding: 2em;
+  transition: padding-top 0.3s ease;
 }
 
 h1 {
@@ -177,6 +178,8 @@ img,
   left: 1rem;
   z-index: 1000;
   filter: drop-shadow(0 0 6px rgba(65, 224, 255, 0.5));
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
 }
 
 .menu-toggle img {
@@ -196,6 +199,8 @@ img,
   background: linear-gradient(to right, #0f111a, #1b1e2e, #0f111a);
   box-shadow: inset 0 0 1px rgba(65, 224, 255, 0.07);
   position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
 }
 
 .navbar ul {
@@ -369,6 +374,33 @@ footer {
 }
 
 /* ===========================
+   HIDE‐ON‐SCROLL (applies to both header and hamburger)
+   =========================== */
+/* Scroll‐down: hide header + button */
+body.scroll-down header,
+body.scroll-down .menu-toggle {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Scroll‐up: show header + button */
+body.scroll-up header,
+body.scroll-up .menu-toggle {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Adjust body’s top‐padding on scroll‐down so content shifts up under hidden header */
+body.scroll-down {
+  padding-top: 0.5em;
+}
+body.scroll-up {
+  padding-top: 2em;
+}
+
+/* ===========================
    RESPONSIVE MEDIA QUERIES
    =========================== */
 @media (max-width: 600px) {
@@ -396,12 +428,16 @@ footer {
     text-align: center;
     width: auto;
   }
-  .logo-stack .line1 { font-size: 1.6rem; }
+  .logo-stack .line1 {
+    font-size: 1.6rem;
+  }
   .logo-stack .line2 {
     font-size: 1.6rem;
     margin-bottom: -0.15em;
   }
-  .logo-stack .line3 { font-size: 1rem; }
+  .logo-stack .line3 {
+    font-size: 1rem;
+  }
 
   /* 4) Container no longer needs horizontal padding on mobile */
   .container {
@@ -419,13 +455,14 @@ footer {
   /* 6) Show hamburger, strip desktop navbar styling */
   .menu-toggle {
     display: block;
-    position: fixed; 
-    top: 0; 
+    position: fixed;
+    top: 0;
+    left: 1rem;
     z-index: 900;
   }
   .navbar {
-    position: sticky; 
-    top: 0; 
+    position: relative;
+    top: auto;
     z-index: 900;
     background: transparent;
     box-shadow: none;
@@ -438,10 +475,10 @@ footer {
     display: none;
     flex-direction: column;
     margin: 0;
-    /*padding: 0.75em 0;*/
     background: transparent;
     box-shadow: 0 2px 0 rgba(65, 224, 255, 0.25);
     border-radius: 0;
+    padding: 0;
   }
 
   /* 8) When toggle is “.open”, reveal it (in-flow), pushing content down */
@@ -453,6 +490,7 @@ footer {
   /* 9) Each menu item spans 100% of that panel */
   .navbar ul li {
     margin: 0;
+    width: 100%;
   }
   .navbar ul li a {
     display: block;
@@ -460,6 +498,8 @@ footer {
     text-align: center;
     color: #e0f7ff;
     border-radius: 0;
+    font-size: 1.2rem;
+    transition: background 0.2s ease, color 0.2s ease;
   }
   .navbar ul li a:hover {
     background: rgba(65, 224, 255, 0.05);
