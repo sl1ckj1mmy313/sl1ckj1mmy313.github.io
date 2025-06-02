@@ -464,7 +464,6 @@ footer {
     margin: 0 auto 1.5em; /* center horizontally, 1.5em bottom */
     padding: 1.5em;         /* reduced padding */
     text-align: center;   /* center headings and paragraphs */
-    left: 0;
   }
   .paper-card h2 {
     font-size: 1.5rem;
