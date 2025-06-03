@@ -462,7 +462,7 @@ body.scroll-up {
     -webkit-backdrop-filter: blur(10px);     /* Safari/older WebKit */
     flex-direction: column;
     margin: 0;
-    padding-top: 4rem;    /* leave space for close button */
+    padding-top: 2rem;    /* leave space for close button */
     box-sizing: border-box;
     overflow-y: auto;     /* allow scrolling if too many items */
     gap: 1rem;
