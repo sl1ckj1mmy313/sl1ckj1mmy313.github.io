@@ -6,14 +6,36 @@ body {
   background: #0f111a;
   color: #e0f7ff;
   text-align: center;
-  padding: 2em 0 0 0;             /* only top padding */
+  padding: 2em 0 0 0;              /* top padding only */
   transition: padding-top 0.3s ease;
-  overflow-x: hidden;            /* prevent horizontal scroll */
+  overflow-x: hidden;              /* prevent horizontal scroll */
 }
-
-/* Prevent body scroll when menu overlay is open */
+/* Prevent body from scrolling when overlay is open */
 body.no-scroll {
   overflow: hidden;
+}
+
+/* ===========================
+   HIDE-ON-SCROLL (header + toggle)
+   =========================== */
+body.scroll-down header.navbar,
+body.scroll-down .menu-toggle {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+body.scroll-up header.navbar,
+body.scroll-up .menu-toggle {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+/* Adjust body’s top padding when header is hidden */
+body.scroll-down {
+  padding-top: 0.5em;
+}
+body.scroll-up {
+  padding-top: 2em;
 }
 
 h1 {
@@ -22,8 +44,7 @@ h1 {
 
 /*===========================
    CUSTOM SCROLLBAR
-   ===========================*/
-
+  ===========================*/
 /* WebKit (Chrome, Safari, Edge, etc.) */
 ::-webkit-scrollbar {
   width: 8px;
@@ -40,7 +61,6 @@ h1 {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #72dfff 0%, #9c8eff 100%);
 }
-
 /* Firefox */
 body {
   scrollbar-width: thin;
@@ -52,7 +72,6 @@ body {
     -ms-overflow-style: scrollbar;
   }
 }
-
 /* Remove default focus outline */
 :focus {
   outline: none;
@@ -160,7 +179,7 @@ img,
   border: none;
   cursor: pointer;
   padding: 0.5em;
-  position: fixed;            /* Always top-left on mobile */
+  position: fixed;            /* Always at top-left on mobile */
   top: 0.5rem;
   left: 1rem;
   z-index: 1000;
@@ -192,8 +211,6 @@ header.navbar {
   transition: transform 0.3s ease, opacity 0.3s ease;
   will-change: transform, opacity;
 }
-
-/* Desktop nav links normally visible */
 .navbar ul {
   list-style: none;
   padding: 0;
@@ -240,7 +257,7 @@ header.navbar {
    PAPER CARD LAYOUT
    =========================== */
 .paper-card {
-  background: #1b1e2e;
+  background: rgba(27, 30, 46, 0.45);   /*#1b1e2e  at 45% opacity */
   border-radius: 10px;
   padding: 2em;
   margin: 0 auto 2em;
@@ -357,31 +374,6 @@ footer {
 }
 
 /* ===========================
-   HIDE-ON-SCROLL (header + button)
-   =========================== */
-/* Scroll-down: hide header + button */
-body.scroll-down header.navbar,
-body.scroll-down .menu-toggle {
-  transform: translateY(-100%);
-  opacity: 0;
-  pointer-events: none;
-}
-/* Scroll-up: show header + button */
-body.scroll-up header.navbar,
-body.scroll-up .menu-toggle {
-  transform: translateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-/* Adjust body’s top-padding on scroll-down so content shifts under hidden header */
-body.scroll-down {
-  padding-top: 0.5em;
-}
-body.scroll-up {
-  padding-top: 2em;
-}
-
-/* ===========================
    RESPONSIVE MEDIA QUERIES (≤600px)
    =========================== */
 @media (max-width: 600px) {
@@ -409,12 +401,16 @@ body.scroll-up {
     text-align: center;
     width: auto;
   }
-  .logo-stack .line1 { font-size: 1.6rem; }
+  .logo-stack .line1 {
+    font-size: 1.6rem;
+  }
   .logo-stack .line2 {
     font-size: 1.6rem;
     margin-bottom: -0.15em;
   }
-  .logo-stack .line3 { font-size: 1rem; }
+  .logo-stack .line3 {
+    font-size: 1rem;
+  }
 
   /* 4) Container no longer needs horizontal padding */
   .container {
@@ -458,8 +454,8 @@ body.scroll-up {
     width: 100vw;
     height: 100vh;
     background: rgba(27, 30, 46, 0.95);  /* slight transparency */
-    backdrop-filter: blur(10px);             /* frosted blur */
-    -webkit-backdrop-filter: blur(10px);     /* Safari/older WebKit */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     flex-direction: column;
     margin: 0;
     padding-top: 2rem;    /* leave space for close button */
@@ -492,7 +488,7 @@ body.scroll-up {
     color: #41e0ff;
   }
 
-  /* 10) “Paper-card” spans full width */
+  /* 10) “Paper‐card” spans full width */
   .paper-card {
     width: 100%;
     max-width: none;
@@ -501,7 +497,9 @@ body.scroll-up {
     text-align: center;
     box-sizing: border-box;
   }
-  .paper-card h2 { font-size: 1.5rem; }
+  .paper-card h2 {
+    font-size: 1.5rem;
+  }
   .paper-card p {
     font-size: 1rem;
     line-height: 1.5;
@@ -522,5 +520,3 @@ body.scroll-up {
     font-size: 1rem;
     padding: 0.75em 1.25em;
     margin: 0.5em auto;
-  }
-}
