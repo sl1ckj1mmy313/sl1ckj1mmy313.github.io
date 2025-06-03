@@ -2,8 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.querySelector('.menu-toggle');
-  const iconImg = toggleBtn.querySelector('img');
-  const header = document.querySelector('header.navbar');
+  const iconImg   = toggleBtn.querySelector('img');
+  const header    = document.querySelector('header.navbar');
+
+  //  Track last scroll position
   let lastScrollY = window.pageYOffset;
   let ticking = false;
 
@@ -13,22 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isOpen) {
       iconImg.src = 'assets/close.svg';
       iconImg.alt = 'Close Menu';
-      document.body.classList.add('menu-open'); // Prevent background scroll
     } else {
       iconImg.src = 'assets/menu.svg';
       iconImg.alt = 'Open Menu';
-      document.body.classList.remove('menu-open');
     }
   });
 
-  // 2) Close menu when any nav link is clicked (mobile)
+  // 2) Close menu when any nav link is clicked (mobile only)
   document.querySelectorAll('.navbar ul li a').forEach(link => {
     link.addEventListener('click', () => {
       if (toggleBtn.classList.contains('open')) {
         toggleBtn.classList.remove('open');
         iconImg.src = 'assets/menu.svg';
         iconImg.alt = 'Open Menu';
-        document.body.classList.remove('menu-open');
       }
     });
   });
@@ -40,11 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScrollY = window.pageYOffset;
 
         if (currentScrollY > lastScrollY && currentScrollY > 50) {
-          // Scrolling down → hide header + hamburger
+          // Scrolling down → hide header + (mobile) hamburger
           document.body.classList.add('scroll-down');
           document.body.classList.remove('scroll-up');
         } else if (currentScrollY < lastScrollY) {
-          // Scrolling up → show header + hamburger
+          // Scrolling up → show header + button
           document.body.classList.add('scroll-up');
           document.body.classList.remove('scroll-down');
         }
