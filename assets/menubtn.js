@@ -2,10 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.querySelector('.menu-toggle');
-  const iconImg = toggleBtn.querySelector('img');
-  const header = document.querySelector('header.navbar');
+  const iconImg   = toggleBtn.querySelector('img');
+  const header    = document.querySelector('header.navbar');
 
-  // Track last scroll position
+  //  Track last scroll position
   let lastScrollY = window.pageYOffset;
   let ticking = false;
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 2) Close menu when any nav link clicked (mobile)
+  // 2) Close menu when any nav link is clicked (mobile only)
   document.querySelectorAll('.navbar ul li a').forEach(link => {
     link.addEventListener('click', () => {
       if (toggleBtn.classList.contains('open')) {
@@ -32,20 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3) Hide/Show header + button on scroll
+  // 3) Hide/Show header + button on scroll (desktop & mobile)
   window.addEventListener('scroll', () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
         const currentScrollY = window.pageYOffset;
+
         if (currentScrollY > lastScrollY && currentScrollY > 50) {
-          // Scrolling down
+          // Scrolling down → hide header + (mobile) hamburger
           document.body.classList.add('scroll-down');
           document.body.classList.remove('scroll-up');
         } else if (currentScrollY < lastScrollY) {
-          // Scrolling up
+          // Scrolling up → show header + button
           document.body.classList.add('scroll-up');
           document.body.classList.remove('scroll-down');
         }
+
         lastScrollY = currentScrollY;
         ticking = false;
       });
