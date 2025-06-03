@@ -10,13 +10,14 @@ body {
   transition: padding-top 0.3s ease;
   overflow-x: hidden;            /* prevent horizontal scroll */
 }
-h1 {
-  font-family: 'Cinzel', serif;
-}
 
-/* Prevent body scroll when menu is open */
+/* Prevent body scroll when menu overlay is open */
 body.no-scroll {
   overflow: hidden;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
 }
 
 /*===========================
@@ -154,12 +155,12 @@ img,
    HAMBURGER / MENU TOGGLE
    =========================== */
 .menu-toggle {
-  display: none;              /* Hidden on desktop; shown on mobile ≤600px */
+  display: none;              /* Hidden on desktop */
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.5em;
-  position: fixed;            /* Always fixed at top-left on mobile */
+  position: fixed;            /* Always top-left on mobile */
   top: 0.5rem;
   left: 1rem;
   z-index: 1000;
@@ -183,7 +184,7 @@ header.navbar {
   color: #a5b8cc;
   background: linear-gradient(to right, #0f111a, #1b1e2e, #0f111a);
   box-shadow: inset 0 0 1px rgba(65, 224, 255, 0.07);
-  position: fixed;            /* Fixed at top for desktop */
+  position: fixed;            /* Fixed at top on desktop */
   top: 0;
   left: 0;
   width: 100%;
@@ -192,7 +193,7 @@ header.navbar {
   will-change: transform, opacity;
 }
 
-/* Standard nav links (desktop) */
+/* Desktop nav links normally visible */
 .navbar ul {
   list-style: none;
   padding: 0;
@@ -200,7 +201,7 @@ header.navbar {
   display: flex;
   justify-content: center;
   gap: 1.5em;
-  transition: none; /* we'll override on mobile */
+  transition: none; /* override on mobile */
 }
 .navbar ul li a {
   color: #e0f7ff;
@@ -391,7 +392,7 @@ body.scroll-up {
     border-bottom: none;
   }
 
-  /* 2) Drop the body’s side-padding so content goes full-width */
+  /* 2) Drop the body’s side-padding so content is edge-to-edge */
   body {
     padding-left: 0;
     padding-right: 0;
@@ -422,7 +423,7 @@ body.scroll-up {
     margin-bottom: 1.5em;
   }
 
-  /* 5) Inputs / textareas full width */
+  /* 5) Inputs/textareas full width */
   input,
   textarea {
     width: 100%;
@@ -431,13 +432,13 @@ body.scroll-up {
   /* 6) Show hamburger; strip desktop nav styling */
   .menu-toggle {
     display: block;
-    position: fixed;      /* fixed at top-left on mobile */
+    position: fixed;   /* fixed at top-left on mobile */
     top: 0.5rem;
     left: 1rem;
     z-index: 900;
   }
   header.navbar {
-    position: relative;   /* in-flow on mobile */
+    position: relative;   /* no longer fixed on mobile */
     top: auto;
     left: auto;
     width: 100%;
@@ -448,33 +449,38 @@ body.scroll-up {
     border: none;
   }
 
-  /* 7) Hide the <ul> by default; it becomes an in-flow panel */
+  /* 7) Hide the <ul> by default; it becomes a fixed full-screen overlay */
   .navbar ul {
     display: none;
+    position: fixed;      /* overlay the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(27, 30, 46, 0.95);  /* slight transparency */
+    backdrop-filter: blur(10px);             /* frosted blur */
+    -webkit-backdrop-filter: blur(10px);     /* Safari/older WebKit */
     flex-direction: column;
     margin: 0;
-    background: #1b1e2e;
-    box-shadow: 0 2px 6px rgba(65, 224, 255, 0.25);
-    border-radius: 0;
-    padding: 0;
+    padding-top: 4rem;    /* leave space for close button */
+    box-sizing: border-box;
+    overflow-y: auto;     /* allow scrolling if too many items */
+    gap: 1rem;
   }
 
-  /* 8) When toggle is “.open”, reveal it in-flow (push content down) */
+  /* 8) When toggle is “.open”, reveal it as full-screen */
   .menu-toggle.open + .navbar ul {
     display: flex;
-    gap: 0;
-    height: 100vh;             /* occupy full viewport height */
-    overflow-y: auto;          /* scroll if too many items */
   }
 
-  /* 9) Each menu item spans 100% of panel */
+  /* 9) Each menu item spans 100% of that panel */
   .navbar ul li {
     margin: 0;
     width: 100%;
   }
   .navbar ul li a {
     display: block;
-    padding: 0.75em 1em;
+    padding: 1rem 1.5rem;
     text-align: center;
     color: #e0f7ff;
     border-radius: 0;
@@ -511,7 +517,7 @@ body.scroll-up {
     width: 100%;
   }
 
-  /* 11) Buttons a bit larger and centered */
+  /* 11) Buttons slightly larger and centered */
   .btn {
     font-size: 1rem;
     padding: 0.75em 1.25em;
