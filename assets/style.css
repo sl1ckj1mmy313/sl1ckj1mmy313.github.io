@@ -6,13 +6,17 @@ body {
   background: #0f111a;
   color: #e0f7ff;
   text-align: center;
-  padding: 2em 0 0 0;            /* Only top padding; sides = 0 */
+  padding: 2em 0 0 0;             /* only top padding */
   transition: padding-top 0.3s ease;
-  overflow-x: hidden;           /* Prevent horizontal scroll */
+  overflow-x: hidden;            /* prevent horizontal scroll */
 }
-
 h1 {
   font-family: 'Cinzel', serif;
+}
+
+/* Prevent body scroll when menu is open */
+body.no-scroll {
+  overflow: hidden;
 }
 
 /*===========================
@@ -25,11 +29,11 @@ h1 {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #1b1e2e;             
+  background: #1b1e2e;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #41e0ff 0%, #726bff 100%);  
+  background: linear-gradient(180deg, #41e0ff 0%, #726bff 100%);
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -41,7 +45,6 @@ body {
   scrollbar-width: thin;
   scrollbar-color: #41e0ff #1b1e2e;
 }
-
 /* Edge Legacy */
 @supports (-ms-overflow-style: none) {
   body {
@@ -151,12 +154,12 @@ img,
    HAMBURGER / MENU TOGGLE
    =========================== */
 .menu-toggle {
-  display: none;               /* Hidden on desktop; shown on mobile ≤600px */
+  display: none;              /* Hidden on desktop; shown on mobile ≤600px */
   background: none;
   border: none;
   cursor: pointer;
   padding: 0.5em;
-  position: fixed;             /* Always fixed at top-left on mobile */
+  position: fixed;            /* Always fixed at top-left on mobile */
   top: 0.5rem;
   left: 1rem;
   z-index: 1000;
@@ -180,7 +183,7 @@ header.navbar {
   color: #a5b8cc;
   background: linear-gradient(to right, #0f111a, #1b1e2e, #0f111a);
   box-shadow: inset 0 0 1px rgba(65, 224, 255, 0.07);
-  position: fixed;              /* Fixed at top for desktop */
+  position: fixed;            /* Fixed at top for desktop */
   top: 0;
   left: 0;
   width: 100%;
@@ -197,6 +200,7 @@ header.navbar {
   display: flex;
   justify-content: center;
   gap: 1.5em;
+  transition: none; /* we'll override on mobile */
 }
 .navbar ul li a {
   color: #e0f7ff;
@@ -352,7 +356,7 @@ footer {
 }
 
 /* ===========================
-   HIDE‐ON‐SCROLL (header + button)
+   HIDE-ON-SCROLL (header + button)
    =========================== */
 /* Scroll-down: hide header + button */
 body.scroll-down header.navbar,
@@ -361,7 +365,6 @@ body.scroll-down .menu-toggle {
   opacity: 0;
   pointer-events: none;
 }
-
 /* Scroll-up: show header + button */
 body.scroll-up header.navbar,
 body.scroll-up .menu-toggle {
@@ -369,7 +372,6 @@ body.scroll-up .menu-toggle {
   opacity: 1;
   pointer-events: auto;
 }
-
 /* Adjust body’s top-padding on scroll-down so content shifts under hidden header */
 body.scroll-down {
   padding-top: 0.5em;
@@ -461,6 +463,8 @@ body.scroll-up {
   .menu-toggle.open + .navbar ul {
     display: flex;
     gap: 0;
+    height: 100vh;             /* occupy full viewport height */
+    overflow-y: auto;          /* scroll if too many items */
   }
 
   /* 9) Each menu item spans 100% of panel */

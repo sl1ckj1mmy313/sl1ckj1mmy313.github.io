@@ -1,0 +1,45 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="httpx" />
+            <item index="1" class="java.lang.String" itemvalue="scipy" />
+            <item index="2" class="java.lang.String" itemvalue="tensorflow" />
+            <item index="3" class="java.lang.String" itemvalue="web3" />
+            <item index="4" class="java.lang.String" itemvalue="torch" />
+            <item index="5" class="java.lang.String" itemvalue="pycryptodome" />
+            <item index="6" class="java.lang.String" itemvalue="pytest" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E501" />
+          <option value="E303" />
+          <option value="E302" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="speechrecognition.demo.demo.engine" />
+          <option value="speechrecognition1.neuralnet.modules.module.___torch_mangle_2.__torch__" />
+          <option value="speechrecognition.code.__torch__.torch.nn.modules.module.___torch_mangle_12.__annotations__" />
+          <option value="speechrecognition.engine" />
+          <option value="src.model.text.codebert_model.*" />
+          <option value="src.model.text.gpt_programming.code_to_code_trans" />
+          <option value="src.model.text.gpt_programming.CodeCompletion_line" />
+          <option value="src.model.text.gpt_programming.CodeCompletion_token" />
+          <option value="src.model.text.gpt_programming.code_text" />
+          <option value="selenium.webdriver.support.ui.WebDriverWait" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
