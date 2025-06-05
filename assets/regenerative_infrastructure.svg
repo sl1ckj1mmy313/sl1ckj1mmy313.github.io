@@ -1,0 +1,80 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .aura {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: rotateAura 18s linear infinite;
+    }
+    .grid {
+      stroke: url(#gridGrad);
+      stroke-width: 2;
+      fill: none;
+    }
+    .loop {
+      stroke: url(#loopGrad);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-dasharray: 20 28;
+      stroke-dashoffset: 0;
+      fill: none;
+      animation: pulseLoop 4s linear infinite;
+    }
+    .core {
+      animation: pulseCore 2.5s ease-in-out infinite;
+    }
+
+    @keyframes rotateAura {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulseLoop {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -48; }
+    }
+    @keyframes pulseCore {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.3; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+
+  <!-- Centered aura -->
+  <circle class="aura" cx="32" cy="32" r="24"/>
+
+  <!-- Centered hex grid -->
+  <polygon class="grid" points="32,18 42,24 42,36 32,42 22,36 22,24"/>
+
+  <!-- Flow loop around hex -->
+  <path class="loop" d="M32 18 L42 24 L42 36 L32 42 L22 36 L22 24 Z"/>
+
+  <!-- Central pulse node -->
+  <circle class="core" cx="32" cy="30" r="3" fill="url(#corePulse)"/>
+
+  <defs>
+    <!-- Glow aura -->
+    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#726bff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Grid stroke -->
+    <linearGradient id="gridGrad" x1="22" y1="18" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+
+    <!-- Glowing loop stroke -->
+    <linearGradient id="loopGrad" x1="22" y1="24" x2="42" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Pulse core -->
+    <radialGradient id="corePulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#41e0ff"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

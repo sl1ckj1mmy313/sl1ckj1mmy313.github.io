@@ -1,0 +1,70 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .aura-spin {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: rotateAura 20s linear infinite;
+    }
+
+    .vine-static {
+      stroke: url(#vineBase);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    .vine-glow {
+      stroke: url(#vineGlow);
+      stroke-width: 3;
+      fill: none;
+      stroke-linecap: round;
+      stroke-dasharray: 24 96;
+      stroke-dashoffset: 0;
+      opacity: 0.7;
+      animation: glowTravel 2.8s linear infinite;
+    }
+
+    @keyframes rotateAura {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes glowTravel {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -120; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#1b1e2e"/>
+
+  <!-- Rotating aura -->
+  <circle class="aura-spin" cx="32" cy="32" r="24"/>
+
+  <!-- Static vine path -->
+  <path class="vine-static" d="M32 50c-10-6-12-14-6-20s10-8 10-12-4-6-6-6"/>
+
+  <!-- Flow overlay -->
+  <path class="vine-glow" d="M32 50c-10-6-12-14-6-20s10-8 10-12-4-6-6-6"/>
+
+  <defs>
+    <!-- Static gradient -->
+    <linearGradient id="vineBase" x1="20" y1="60" x2="44" y2="14" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+
+    <!-- Glow pulse gradient -->
+    <linearGradient id="vineGlow" x1="20" y1="60" x2="44" y2="14" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="80%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Aura background -->
+    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4fd1c5" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

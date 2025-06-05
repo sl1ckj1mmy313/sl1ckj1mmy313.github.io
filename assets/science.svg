@@ -1,0 +1,80 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .aura {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: rotateAura 18s linear infinite;
+    }
+    .lens {
+      stroke-width: 2;
+      fill: none;
+    }
+    .flowbeam {
+      stroke: url(#beam);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-dasharray: 20 40;
+      animation: flowBeam 3.8s linear infinite;
+    }
+    .core {
+      animation: pulseCore 2.8s ease-in-out infinite;
+    }
+
+    @keyframes rotateAura {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes flowBeam {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -60; }
+    }
+    @keyframes pulseCore {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.4; }
+    }
+  </style>
+
+  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+  <circle class="aura" cx="32" cy="32" r="24"/>
+
+  <!-- Triangle of domains -->
+  <circle class="lens" cx="22" cy="26" r="6" stroke="url(#grad1)"/>
+  <circle class="lens" cx="42" cy="26" r="6" stroke="url(#grad2)"/>
+  <circle class="lens" cx="32" cy="42" r="6" stroke="url(#grad3)"/>
+
+  <!-- Energy beam to center -->
+  <path class="flowbeam" d="M22 26 L32 32 L42 26 M32 32 L32 42" fill="none"/>
+
+  <!-- Central pulse -->
+  <circle class="core" cx="32" cy="32" r="3" fill="url(#core)"/>
+
+  <defs>
+    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4fd1c5" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="grad1" x1="20" y1="20" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="40" y1="20" x2="48" y2="28" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#726bff"/>
+      <stop offset="1" stop-color="#4fd1c5"/>
+    </linearGradient>
+    <linearGradient id="grad3" x1="30" y1="38" x2="38" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4fd1c5"/>
+      <stop offset="1" stop-color="#41e0ff"/>
+    </linearGradient>
+
+    <linearGradient id="beam" x1="22" y1="26" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="core" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#41e0ff"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,93 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .aura-ring {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: rotateAura 22s linear infinite;
+    }
+
+    .pulse-ring-outer {
+      stroke: url(#ringPulseOuter);
+      stroke-width: 2.5;
+      fill: none;
+      stroke-dasharray: 20 14;
+      stroke-dashoffset: 0;
+      animation: spinOuter 5.5s linear infinite;
+    }
+
+    .pulse-ring-inner {
+      stroke: url(#ringPulseInner);
+      stroke-width: 2;
+      fill: none;
+      stroke-dasharray: 10 6;
+      stroke-dashoffset: 0;
+      animation: spinInner 2.5s linear infinite;
+    }
+
+    .core-dot {
+      animation: corePulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes rotateAura {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes spinOuter {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -68; }
+    }
+
+    @keyframes spinInner {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -32; }
+    }
+
+    @keyframes corePulse {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.3; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+
+  <!-- Outer glowing time aura -->
+  <circle class="aura-ring" cx="32" cy="32" r="24"/>
+
+  <!-- Outer orbiting ring (long frequency) -->
+  <circle class="pulse-ring-outer" cx="32" cy="32" r="18"/>
+
+  <!-- Inner orbiting ring (fast frequency) -->
+  <circle class="pulse-ring-inner" cx="32" cy="32" r="10"/>
+
+  <!-- Quantum time core -->
+  <circle class="core-dot" cx="32" cy="32" r="3" fill="url(#core)"/>
+
+  <defs>
+    <!-- Glow field -->
+    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#726bff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Core pulse gradient -->
+    <radialGradient id="core" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#41e0ff"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Outer ring flow -->
+    <linearGradient id="ringPulseOuter" x1="14" y1="32" x2="50" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="0.5" stop-color="#4fd1c5"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+
+    <!-- Inner ring pulse (high frequency) -->
+    <linearGradient id="ringPulseInner" x1="22" y1="32" x2="42" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#726bff"/>
+      <stop offset="1" stop-color="#41e0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
