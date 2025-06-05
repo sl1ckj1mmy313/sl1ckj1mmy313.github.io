@@ -1,0 +1,75 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .aura {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: auraSpin 20s linear infinite;
+    }
+
+    .ring {
+      stroke: url(#restoreGrad);
+      fill: none;
+      stroke-width: 1.5;
+      opacity: 0.7;
+      transform-origin: center;
+      animation: ringPulse 4s ease-in-out infinite;
+    }
+
+    .ring:nth-child(2) { animation-delay: 1.2s; }
+    .ring:nth-child(3) { animation-delay: 2.4s; }
+
+    .node {
+      fill: url(#nodeGrad);
+      animation: corePulse 3s ease-in-out infinite;
+    }
+
+    @keyframes auraSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes ringPulse {
+      0%, 100% { r: 10; opacity: 0.4; }
+      50% { r: 16; opacity: 0.8; }
+    }
+
+    @keyframes corePulse {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.5; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+
+  <!-- Subtle rotating energy field -->
+  <circle class="aura" cx="32" cy="32" r="24"/>
+
+  <!-- Expanding harmony rings -->
+  <circle class="ring" cx="32" cy="32" r="10"/>
+  <circle class="ring" cx="32" cy="32" r="10"/>
+  <circle class="ring" cx="32" cy="32" r="10"/>
+
+  <!-- Core node -->
+  <circle class="node" cx="32" cy="32" r="3"/>
+
+  <defs>
+    <!-- Glow aura -->
+    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4fd1c5" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Harmonization gradient -->
+    <linearGradient id="restoreGrad" x1="24" y1="24" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+
+    <!-- Central pulse -->
+    <radialGradient id="nodeGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#4fd1c5"/>
+      <stop offset="100%" stop-color="#4fd1c5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

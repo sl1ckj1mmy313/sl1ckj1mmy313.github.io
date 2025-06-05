@@ -1,0 +1,91 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .aura {
+      fill: url(#auraGrad);
+      transform-origin: center;
+      animation: spin 14s linear infinite;
+    }
+
+    .beam {
+      stroke: url(#beamGrad);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 1 3;
+      animation: beamFlow 2.5s linear infinite;
+    }
+
+    .spark {
+      fill: url(#sparkGrad);
+      animation: pulseSpark 3s ease-in-out infinite;
+    }
+
+    .crystal {
+      stroke: url(#crystalGrad);
+      stroke-width: 1.5;
+      fill: none;
+      opacity: 0.9;
+      transform-origin: center;
+      animation: bloomCrystal 4s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes beamFlow {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: -12; }
+    }
+
+    @keyframes pulseSpark {
+      0%, 100% { r: 2; opacity: 1; }
+      50% { r: 3.5; opacity: 0.3; }
+    }
+
+    @keyframes bloomCrystal {
+      0%, 100% { transform: scale(0.85); opacity: 0.7; }
+      50% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+
+  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+
+  <!-- Aura ring -->
+  <circle class="aura" cx="32" cy="32" r="24"/>
+
+  <!-- Descending beam -->
+  <line class="beam" x1="32" y1="8" x2="32" y2="26"/>
+
+  <!-- Descending seed spark -->
+  <circle class="spark" cx="32" cy="26" r="2"/>
+
+  <!-- Blooming structure / crystal -->
+  <polygon class="crystal" points="32,36 36,40 32,44 28,40"/>
+
+  <defs>
+    <!-- Rotating field -->
+    <radialGradient id="auraGrad" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#726bff" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Beam gradient -->
+    <linearGradient id="beamGrad" x1="32" y1="8" x2="32" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#726bff"/>
+      <stop offset="1" stop-color="#41e0ff"/>
+    </linearGradient>
+
+    <!-- Spark -->
+    <radialGradient id="sparkGrad" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#41e0ff"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Blooming crystal structure -->
+    <linearGradient id="crystalGrad" x1="28" y1="36" x2="36" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4fd1c5"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+  </defs>
+</svg>

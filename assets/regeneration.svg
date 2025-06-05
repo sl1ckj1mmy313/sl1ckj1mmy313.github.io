@@ -1,0 +1,132 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .aura {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: spinAura 16s linear infinite;
+    }
+
+    .ring-global {
+      stroke: url(#globalGrad);
+      stroke-width: 1.2;
+      fill: none;
+      opacity: 0.5;
+      animation: pulseGlobal 5s ease-in-out infinite;
+    }
+
+    .ring-local {
+      stroke: url(#localGrad);
+      stroke-width: 1.6;
+      fill: none;
+      animation: pulseLocal 3.2s ease-in-out infinite;
+    }
+
+    .core {
+      fill: url(#corePulse);
+      animation: pulseCore 3.2s ease-in-out infinite;
+    }
+
+    .node {
+      fill: url(#nodePulse);
+      animation: nodePulse 3.2s ease-in-out infinite;
+    }
+
+    .fractal {
+      stroke: url(#fractalGrad);
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      opacity: 0.8;
+      stroke-dasharray: 10;
+      animation: growFractals 6s ease-in-out infinite;
+    }
+
+    @keyframes spinAura {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseGlobal {
+      0%, 100% { r: 22; opacity: 0.3; }
+      50% { r: 25; opacity: 0.6; }
+    }
+
+    @keyframes pulseLocal {
+      0%, 100% { r: 12; opacity: 0.6; }
+      50% { r: 14.5; opacity: 1; }
+    }
+
+    @keyframes pulseCore {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.4; }
+    }
+
+    @keyframes nodePulse {
+      0%, 100% { r: 2; opacity: 0.5; }
+      50% { r: 3.5; opacity: 1; }
+    }
+
+    @keyframes growFractals {
+      0% { stroke-dashoffset: 10; }
+      50% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -10; }
+    }
+  </style>
+
+  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+
+  <!-- Spinning aura field -->
+  <circle class="aura" cx="32" cy="32" r="28"/>
+
+  <!-- Global ring -->
+  <circle class="ring-global" cx="32" cy="32" r="22"/>
+
+  <!-- Local ring -->
+  <circle class="ring-local" cx="32" cy="32" r="12"/>
+
+  <!-- Core -->
+  <circle class="core" cx="32" cy="32" r="3"/>
+
+  <!-- Extended fractal lines (from core to global ring) -->
+  <line class="fractal" x1="32" y1="32" x2="16" y2="10"/>
+  <line class="fractal" x1="32" y1="32" x2="48" y2="10"/>
+  <line class="fractal" x1="32" y1="32" x2="16" y2="54"/>
+  <line class="fractal" x1="32" y1="32" x2="48" y2="54"/>
+
+  <!-- Interconnected peripheral nodes -->
+  <circle class="node" cx="18" cy="32" r="2"/>
+  <circle class="node" cx="46" cy="32" r="2"/>
+  <circle class="node" cx="32" cy="18" r="2"/>
+  <circle class="node" cx="32" cy="46" r="2"/>
+
+  <defs>
+    <radialGradient id="aura" cx="32" cy="32" r="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#726bff" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="globalGrad" x1="10" y1="10" x2="54" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#726bff"/>
+      <stop offset="1" stop-color="#41e0ff"/>
+    </linearGradient>
+
+    <linearGradient id="localGrad" x1="24" y1="24" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4fd1c5"/>
+      <stop offset="1" stop-color="#41e0ff"/>
+    </linearGradient>
+
+    <linearGradient id="fractalGrad" x1="16" y1="10" x2="48" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4fd1c5"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+
+    <radialGradient id="corePulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#41e0ff"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="nodePulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#726bff"/>
+      <stop offset="100%" stop-color="#726bff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

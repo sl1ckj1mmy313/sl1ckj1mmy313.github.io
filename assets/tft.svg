@@ -1,0 +1,75 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg {
+      fill: #0f111a;
+    }
+
+    .flow {
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 5;
+      animation: flowMotion 4s linear infinite;
+    }
+
+    .core {
+      fill: url(#corePulse);
+      animation: pulseCore 4s ease-in-out infinite;
+    }
+
+    @keyframes flowMotion {
+      to { stroke-dashoffset: 20; }
+    }
+
+    @keyframes pulseCore {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.5; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" width="64" height="64" rx="12"/>
+
+  <!-- Left upper (F_L: blue) -->
+  <path class="flow" d="M32 32 C24 24, 24 8, 32 8" stroke="url(#fl-up)"/>
+
+  <!-- Right upper (F_D: red) -->
+  <path class="flow" d="M32 32 C40 24, 40 8, 32 8" stroke="url(#fd-up)"/>
+
+  <!-- Left lower (F_L: blue) -->
+  <path class="flow" d="M32 32 C24 40, 24 56, 32 56" stroke="url(#fl-down)"/>
+
+  <!-- Right lower (F_D: red) -->
+  <path class="flow" d="M32 32 C40 40, 40 56, 32 56" stroke="url(#fd-down)"/>
+
+  <!-- Fusion pulse (F_P) -->
+  <circle class="core" cx="32" cy="32" r="3"/>
+
+  <defs>
+    <!-- Blue gradients (F_L) -->
+    <linearGradient id="fl-up" x1="24" y1="8" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#7c5dff"/>
+    </linearGradient>
+    <linearGradient id="fl-down" x1="24" y1="56" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#7c5dff"/>
+    </linearGradient>
+
+    <!-- Red gradients (F_D) -->
+    <linearGradient id="fd-up" x1="40" y1="8" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff6b6b"/>
+      <stop offset="1" stop-color="#7c5dff"/>
+    </linearGradient>
+    <linearGradient id="fd-down" x1="40" y1="56" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff6b6b"/>
+      <stop offset="1" stop-color="#7c5dff"/>
+    </linearGradient>
+
+    <!-- Purple core pulse (F_P) -->
+    <radialGradient id="corePulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#a177ff"/>
+      <stop offset="100%" stop-color="#a177ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

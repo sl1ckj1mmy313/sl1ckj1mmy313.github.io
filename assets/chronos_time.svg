@@ -1,0 +1,71 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg {
+      fill: #0f111a;
+    }
+
+    .ring {
+      fill: none;
+      stroke: url(#orbitGrad);
+      stroke-width: 2;
+      stroke-dasharray: 4 4;
+      animation: spin 20s linear infinite;
+      transform-origin: center;
+    }
+
+    .pointer {
+      stroke: url(#pointerGrad);
+      stroke-width: 2;
+      stroke-linecap: round;
+      animation: pendulum 6s ease-in-out infinite alternate;
+    }
+
+    .core {
+      fill: url(#corePulse);
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pendulum {
+      0%   { transform: rotate(-25deg); transform-origin: center; }
+      100% { transform: rotate(25deg); transform-origin: center; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 4.5; opacity: 0.5; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect class="bg" width="64" height="64" rx="12"/>
+
+  <!-- Circular orbit (natural time) -->
+  <circle class="ring" cx="32" cy="32" r="20"/>
+
+  <!-- Pendulum or orbiting hand -->
+  <line class="pointer" x1="32" y1="32" x2="32" y2="12"/>
+
+  <!-- Core time pulse -->
+  <circle class="core" cx="32" cy="32" r="3"/>
+
+  <defs>
+    <linearGradient id="orbitGrad" x1="12" y1="32" x2="52" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+
+    <linearGradient id="pointerGrad" x1="32" y1="32" x2="32" y2="12" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f39c12"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <radialGradient id="corePulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#a177ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
