@@ -1,0 +1,107 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .aura {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: rotateField 20s linear infinite;
+    }
+
+    .ring {
+      stroke: url(#ringGrad);
+      stroke-width: 2;
+      fill: none;
+      transform-origin: center;
+      animation: tiltRing 4s ease-in-out infinite;
+    }
+
+    .node-heavy {
+      fill: url(#heavyNodePulse);
+      animation: pulseHeavy 2s ease-in-out infinite;
+    }
+
+    .node-weak {
+      fill: url(#lightNodePulse);
+      animation: pulseWeak 4s ease-in-out infinite;
+    }
+
+    .core {
+      fill: url(#corePulse);
+      animation: pulseCore 5s ease-in-out infinite;
+    }
+
+    @keyframes rotateField {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes tiltRing {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    @keyframes pulseHeavy {
+      0%, 100% { r: 5; opacity: 1; }
+      50% { r: 7; opacity: 0.6; }
+    }
+
+    @keyframes pulseWeak {
+      0%, 100% { r: 3; opacity: 0.3; }
+      50% { r: 2; opacity: 0.1; }
+    }
+
+    @keyframes pulseCore {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.4; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+
+  <!-- Aura -->
+  <circle class="aura" cx="32" cy="32" r="24"/>
+
+  <!-- Imbalanced ring -->
+  <ellipse class="ring" cx="32" cy="32" rx="18" ry="10" />
+
+  <!-- Central node -->
+  <circle class="core" cx="32" cy="32" r="3"/>
+
+  <!-- Overactive node -->
+  <circle class="node-heavy" cx="50" cy="32" r="5"/>
+
+  <!-- Underactive node -->
+  <circle class="node-weak" cx="14" cy="32" r="3"/>
+
+  <defs>
+    <!-- Aura -->
+    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#726bff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ring Gradient -->
+    <linearGradient id="ringGrad" x1="14" y1="32" x2="50" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#4fd1c5"/>
+    </linearGradient>
+
+    <!-- Heavy Node Pulse -->
+    <radialGradient id="heavyNodePulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#ff6b6b" stop-opacity="0.2"/>
+    </radialGradient>
+
+    <!-- Weak Node Pulse -->
+    <radialGradient id="lightNodePulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#4fd1c5"/>
+      <stop offset="100%" stop-color="#4fd1c5" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Core Pulse -->
+    <radialGradient id="corePulse" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#41e0ff"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

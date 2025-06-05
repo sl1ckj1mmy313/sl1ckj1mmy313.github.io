@@ -1,0 +1,82 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .aura {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: rotateAura 20s linear infinite;
+    }
+
+    .crack {
+      stroke: url(#crackGrad);
+      stroke-width: 2;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 12 6;
+      animation: pulseCrack 3.6s linear infinite;
+    }
+
+    .healing {
+      stroke: url(#healGrad);
+      stroke-width: 2.2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-dasharray: 10 26;
+      animation: flowHeal 4.8s linear infinite;
+    }
+
+    .core {
+      animation: pulseCore 2.8s ease-in-out infinite;
+    }
+
+    @keyframes rotateAura {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseCrack {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @keyframes flowHeal {
+      0% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: -36; }
+    }
+
+  </style>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+
+  <!-- Aura -->
+  <circle class="aura" cx="32" cy="32" r="24"/>
+
+  <!-- Planet outline -->
+  <circle cx="32" cy="32" r="16" stroke="#2e384d" stroke-width="2" fill="none"/>
+
+  <!-- Cracks -->
+  <path class="crack" d="M24 20 C26 28, 36 28, 38 36" />
+  <path class="crack" d="M40 26 C34 34, 28 36, 24 44" />
+
+  <!-- Healing flows exactly tracing the cracks -->
+  <path class="healing" d="M24 20 C26 28, 36 28, 38 36" />
+  <path class="healing" d="M40 26 C34 34, 28 36, 24 44" />
+
+  <defs>
+    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#726bff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="crackGrad" x1="24" y1="20" x2="38" y2="36" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff6b6b"/>
+      <stop offset="1" stop-color="#f39c12"/>
+    </linearGradient>
+
+    <linearGradient id="healGrad" x1="24" y1="44" x2="40" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4fd1c5"/>
+      <stop offset="1" stop-color="#41e0ff"/>
+    </linearGradient>
+
+  </defs>
+</svg>
