@@ -1,17 +1,54 @@
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="12" fill="#1b1e2e"/>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .beam-origin {
+      animation: pulseBeam 2s ease-in-out infinite;
+    }
+    .glow-aura {
+      fill: url(#aura);
+      transform-origin: center;
+      animation: rotateAura 16s linear infinite;
+    }
+    .beam-animate {
+      stroke-dasharray: 12;
+      stroke-dashoffset: 0;
+      animation: beamSlide 2s linear infinite;
+    }
+    .book:hover {
+      filter: drop-shadow(0 0 6px #41e0ff);
+    }
 
-  <!-- Top book fold -->
-  <path d="M16 44V24c0-1.2 1.2-2 2.4-1.4l13.6 6.8 13.6-6.8c1.2-.6 2.4.2 2.4 1.4v20"
+    @keyframes rotateAura {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes pulseBeam {
+      0%, 100% { r: 3; opacity: 1; }
+      50% { r: 5; opacity: 0.2; }
+    }
+    @keyframes beamSlide {
+      0% { stroke-dashoffset: 12; }
+      100% { stroke-dashoffset: 0; }
+    }
+  </style>
+
+
+
+  <!-- Glowing knowledge field -->
+  <circle class="glow-aura" cx="32" cy="32" r="24"/>
+
+  <!-- Top fold (book opening) -->
+  <path class="book" d="M16 44V24c0-1.2 1.2-2 2.4-1.4l13.6 6.8 13.6-6.8c1.2-.6 2.4.2 2.4 1.4v20"
         fill="none" stroke="url(#book)" stroke-width="2"/>
 
-  <!-- Mirrored bottom book contour blending with branches -->
-  <path d="M16 44c0 1.2 1.2 2 2.4 1.4l13.6-6.8 13.6 6.8c1.2 0.6 2.4-0.2 2.4-1.4"
+  <!-- Mirrored lower fold -->
+  <path class="book" d="M16 44c0 1.2 1.2 2 2.4 1.4l13.6-6.8 13.6 6.8c1.2 0.6 2.4-0.2 2.4-1.4"
         fill="none" stroke="url(#merge)" stroke-width="2"/>
 
-  <!-- Downward light beam (incoming knowledge) -->
-  <path d="M32 10v12" stroke="url(#beam)" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="32" cy="10" r="3" fill="url(#pulse)"/>
+  <!-- Incoming beam (scrolling effect) -->
+  <path class="beam-animate" d="M32 10v12" stroke="url(#beam)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Beam origin pulse -->
+  <circle class="beam-origin" cx="32" cy="10" r="3" fill="url(#pulse)"/>
 
   <defs>
     <linearGradient id="book" x1="16" y1="24" x2="48" y2="44" gradientUnits="userSpaceOnUse">
@@ -28,8 +65,14 @@
       <stop stop-color="#41e0ff"/>
       <stop offset="1" stop-color="#726bff"/>
     </linearGradient>
+
     <radialGradient id="pulse" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0%" stop-color="#41e0ff"/>
+      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#726bff" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
     </radialGradient>
   </defs>

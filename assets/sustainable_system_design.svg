@@ -1,0 +1,57 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+  <style>
+    .glow-ring {
+      fill: url(#glow);
+      transform-origin: center;
+      animation: rotateGlow 12s linear infinite;
+    }
+    .pulse {
+      animation: pulseFlow 2s ease-in-out infinite;
+    }
+    .node:hover {
+      filter: drop-shadow(0 0 4px #41e0ff);
+    }
+    @keyframes rotateGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulseFlow {
+      0%, 100% { r: 2; opacity: 1; }
+      50% { r: 4; opacity: 0.3; }
+    }
+  </style>
+
+  <!-- Background + glow aura -->
+  <circle class="glow-ring" cx="32" cy="32" r="26"/>
+
+  <!-- Hex + connections -->
+  <g stroke="url(#lg-hex)" stroke-width="2" fill="none">
+    <polygon points="32,14 42,20 42,32 32,38 22,32 22,20"/>
+    <line x1="32" y1="14" x2="32" y2="6"/>
+    <line x1="22" y1="20" x2="14" y2="16"/>
+    <line x1="42" y1="20" x2="50" y2="16"/>
+    <line x1="22" y1="32" x2="14" y2="40"/>
+    <line x1="42" y1="32" x2="50" y2="40"/>
+    <line x1="32" y1="38" x2="32" y2="58"/>
+  </g>
+
+  <!-- Flow nodes with pulse + hover light -->
+  <circle class="pulse node" cx="32" cy="14" r="2" fill="#41e0ff"/>
+  <circle class="pulse node" cx="32" cy="38" r="2" fill="#726bff"/>
+  <circle class="pulse node" cx="22" cy="20" r="2" fill="#726bff"/>
+  <circle class="pulse node" cx="42" cy="20" r="2" fill="#726bff"/>
+  <circle class="pulse node" cx="22" cy="32" r="2" fill="#41e0ff"/>
+  <circle class="pulse node" cx="42" cy="32" r="2" fill="#41e0ff"/>
+
+  <!-- Glow Gradient -->
+  <defs>
+    <linearGradient id="lg-hex" x1="14" y1="6" x2="50" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#41e0ff"/>
+      <stop offset="1" stop-color="#726bff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="32" cy="32" r="26" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#41e0ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#726bff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

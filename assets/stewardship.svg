@@ -1,74 +1,62 @@
-<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .aura {
-      fill: url(#aura);
+    .bg { fill: #0f111a; }
+
+    .hand {
+      stroke: url(#handGrad);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    .flame {
+      fill: url(#flameGrad);
       transform-origin: center;
-      animation: rotateAura 26s linear infinite;
+      animation: flicker 3s ease-in-out infinite;
     }
 
-    .layer {
-      fill: none;
-      stroke: url(#layerGrad);
-      stroke-width: 1.5;
+    .core {
+      fill: url(#coreGlow);
+      animation: pulse 4s ease-in-out infinite;
     }
 
-    .observer-path {
-      fill: none;
-      stroke: none;
-      id: observerOrbit;
+    @keyframes flicker {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
     }
 
-    .observer {
-      fill: url(#glow);
-      animation: orbitNode 6s linear infinite;
-    }
-
-    @keyframes rotateAura {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes orbitNode {
-      from { offset-distance: 0%; }
-      to { offset-distance: 100%; }
+    @keyframes pulse {
+      0%, 100% { r: 2.5; opacity: 1; }
+      50% { r: 3.5; opacity: 0.5; }
     }
   </style>
 
-  <rect width="64" height="64" rx="12" fill="#0f111a"/>
+  <!-- Left hand -->
+  <path class="hand" d="M20 44 C24 36, 28 34, 32 34" />
+  <!-- Right hand -->
+  <path class="hand" d="M44 44 C40 36, 36 34, 32 34" />
 
-  <!-- Rotating aura -->
-  <circle class="aura" cx="32" cy="32" r="24"/>
+  <!-- Flame of stewardship rising -->
+  <path class="flame" d="M32 34 C30 30, 33 26, 32 22 C31 26, 34 30, 32 34 Z"/>
 
-  <!-- Flow layers -->
-  <circle class="layer" cx="32" cy="32" r="8"/>
-  <circle class="layer" cx="32" cy="32" r="14"/>
-  <circle class="layer" cx="32" cy="32" r="20"/>
-
-  <!-- Orbiting observer node -->
-  <circle class="observer" r="2.5">
-    <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
-      <mpath xlink:href="#orbitPath"/>
-    </animateMotion>
-  </circle>
-
-  <!-- Invisible orbital path -->
-  <path id="orbitPath" d="M32 12a20 20 0 1 1 0 40a20 20 0 1 1 0-40Z" />
+  <!-- Core living node -->
+  <circle class="core" cx="32" cy="34" r="2.5"/>
 
   <defs>
-    <radialGradient id="aura" cx="32" cy="32" r="24" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#726bff" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
-    </radialGradient>
-
-    <linearGradient id="layerGrad" x1="12" y1="32" x2="52" y2="32" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#41e0ff"/>
-      <stop offset="0.5" stop-color="#4fd1c5"/>
+    <linearGradient id="handGrad" x1="20" y1="44" x2="44" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4fd1c5"/>
       <stop offset="1" stop-color="#726bff"/>
     </linearGradient>
 
-    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+    <linearGradient id="flameGrad" x1="30" y1="22" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff6b6b"/>
+      <stop offset="0.5" stop-color="#f39c12"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+
+    <radialGradient id="coreGlow" cx="0.5" cy="0.5" r="0.5">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#41e0ff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
     </radialGradient>
   </defs>
 </svg>

@@ -33,7 +33,7 @@
     }
   </style>
 
-  <rect width="64" height="64" rx="12" fill="#1b1e2e"/>
+
 
   <!-- Energy Aura Behind Seed -->
   <circle class="grow-aura" cx="32" cy="18" r="24"/>
