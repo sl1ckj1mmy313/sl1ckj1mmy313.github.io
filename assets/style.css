@@ -1,9 +1,15 @@
 /* ===========================
    GLOBAL & BODY SETTINGS
    =========================== */
+
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #0f111a;
+  background: linear-gradient(
+    135deg,
+    rgba(65, 224, 255, 0.85) 0%,    /* calm blue */
+    rgba(114, 107, 255, 0.95) 30%,  /* soft coral-red */
+    rgba(255, 107, 107, 0.85) 100%  /* mellow purple */
+  );
   color: #e0f7ff;
   text-align: center;
   padding: 2em 0 0 0;              /* top padding only */
@@ -206,9 +212,10 @@ nav.navbar {
   border-bottom: 1px solid rgba(65, 224, 255, 0.1);
   padding: 1em 0;
   color: #a5b8cc;
-  background: rgba(27, 30, 46, 0.65); /* semi‐transparent base */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* darker smoke + blur */
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3); /* subtle glow */
   position: fixed;            /* Fixed at top on desktop */
   top: 0;
@@ -270,7 +277,14 @@ nav.navbar {
    PAPER CARD LAYOUT
    =========================== */
 .paper-card {
-  background: rgba(27, 30, 46, 0.45);   /* #1b1e2e at 45% opacity */
+
+  /* smoked‐glass tint only — no added gradients */
+  background: rgba(0, 0, 0, 0.25);
+
+  /* classic frosted-glass blur */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   border-radius: 10px;
   padding: 2em;
   margin: 0 auto 2em;
@@ -304,6 +318,7 @@ nav.navbar {
   padding: 1em;
   width: 180px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .detailed-card:nth-child(1) { animation-delay: 0.1s; }
@@ -320,7 +335,9 @@ nav.navbar {
 .detailed-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(65, 224, 255, 0.3);
-  background: #0f111a;
+  background: rgba(15, 17, 26, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(65, 224, 255, 0.15);
   border-radius: 12px;
   width: 225px;
@@ -330,7 +347,9 @@ nav.navbar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #0f111a;
+  background: rgba(15, 17, 26, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 12px; /* optional: if you want rounded background */
 
 }
@@ -441,7 +460,11 @@ a.detailed-card p {
   overflow: hidden; /* ensure image fits within circle */
   box-shadow: inset 0 0 6px rgba(65, 224, 255, 0.2);
  }
-
+.detailed_card, ..detailed-subcard {
+  cursor: pointer; /* make clickable */
+  text-decoration: none; /* remove underline */
+  color: inherit; /* inherit color from parent */
+}
 /* Circle container for the SVG */
 .circle-container {
   width: 140px;
@@ -595,8 +618,10 @@ footer {
   text-align: center;
   font-size: 0.9em;
   color: #a5b8cc;
-  background: linear-gradient(to right, #0f111a, #1b1e2e, #0f111a);
-  box-shadow: inset 0 1px 0 rgba(65, 224, 255, 0.07);
+  /* darker smoke + blur */
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);  box-shadow: inset 0 1px 0 rgba(65, 224, 255, 0.07);
 }
 
 /* ===========================
@@ -754,3 +779,4 @@ footer {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
+

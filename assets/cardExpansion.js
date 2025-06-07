@@ -1,6 +1,36 @@
 // assets/cardExpansion.js
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Inject custom scrollbar styles for popup
+  const popupStyles = document.createElement('style');
+  popupStyles.id = 'popup-scrollbar-styles';
+  popupStyles.textContent = `
+.popup-clone::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.popup-clone::-webkit-scrollbar-track {
+  background: #1b1e2e;
+  border-radius: 5px;
+}
+.popup-clone::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #41e0ff 0%, #726bff 100%);
+  border-radius: 5px;
+}
+.popup-clone::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #72dfff 0%, #9c8eff 100%);
+}
+.popup-clone {
+  scrollbar-width: thin;
+  scrollbar-color: #41e0ff #1b1e2e;
+}
+@supports (-ms-overflow-style: none) {
+  .popup-clone {
+    -ms-overflow-style: scrollbar;
+  }
+}
+  `;
+  document.head.appendChild(popupStyles);
   const cards = document.querySelectorAll('.detailed-card, .detailed-subcard');
   const siteWrapper = document.getElementById('site-wrapper');
   const isMobile = () => window.innerWidth <= 600;
