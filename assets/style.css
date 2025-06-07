@@ -274,7 +274,7 @@ nav.navbar {
   border-radius: 10px;
   padding: 2em;
   margin: 0 auto 2em;
-  width: 90%;
+  width: 100%;
   max-width: 800px;
   box-shadow: 0 0 12px rgba(65, 224, 255, 0.1);
   text-align: left;
@@ -294,7 +294,7 @@ nav.navbar {
   display: flex;
   justify-content: space-around;
   gap: 2em;
-  margin: 2em 0;
+  margin: 5em 0 5em 0; /* space above and below */
   flex-wrap: wrap;
   text-align: center;
 }
@@ -320,10 +320,10 @@ nav.navbar {
 .detailed-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 20px rgba(65, 224, 255, 0.3);
-  background: rgba(36, 40, 60, 0.5);
+  background: #0f111a;
   border: 1px solid rgba(65, 224, 255, 0.15);
   border-radius: 12px;
-
+  width: 225px;
 }
 
 .img-container {
@@ -335,9 +335,7 @@ nav.navbar {
 
 }
 
-.detailed-card:hover {
-  background: #0f111a; /* darker on hover */
-}
+
 
 .detailed-card img {
   width: 100px;
@@ -363,6 +361,57 @@ a.detailed-card p {
   color: inherit;
 }
 
+
+
+
+/* --- Slider container overrides --- */
+.showcase {
+  position: relative;
+  overflow: hidden;
+  padding: 1em 0;        /* give some vertical breathing room */
+}
+
+/* hide the original flex/wrap */
+.showcase > .detailed-card,
+.showcase > .detailed-subcard {
+  /* we’ll move these into the track via JS */
+  margin: 0;
+}
+
+/* the track that will slide */
+.showcase .slider-track {
+  display: flex;
+  gap: 2em;              /* same horizontal gap you had */
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+/* navigation buttons */
+.showcase .slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(27, 30, 46, 0.8);
+  border: none;
+  color: #e0f7ff;
+  font-size: 1.8rem;
+  padding: 0.3em 0.6em;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 4px;
+}
+.showcase .slider-prev { left: 0.5em; }
+.showcase .slider-next { right: 0.5em; }
+
+/* hide button when disabled */
+.showcase .slider-btn[disabled] {
+  opacity: 0.3;
+  cursor: default;
+}
+
+
+
+
 /* ===========================
    DETAILED SUBCARDS – EMBLEM STYLE
    =========================== */
@@ -370,7 +419,7 @@ a.detailed-card p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1.5em;
+  margin: .5em;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -390,13 +439,8 @@ a.detailed-card p {
   height: 100px;
   border-radius: 50%;
   overflow: hidden; /* ensure image fits within circle */
-
-
-.detailed-subcard:hover .img-container {
-    box-shadow: inset 0 0 6px rgba(65, 224, 255, 0.2);
-}
-
-
+  box-shadow: inset 0 0 6px rgba(65, 224, 255, 0.2);
+ }
 
 /* Circle container for the SVG */
 .circle-container {
@@ -424,7 +468,45 @@ a.detailed-card p {
   font-size: 1rem;
   font-weight: 600;
   color: #e0f7ff;
-  margin: 0;
+  margin-bottom: 0;
+}
+.detailed-subcard h5 {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #a5b8cc;
+  margin-top: 0.25em;
+}
+
+/* overlay sits beneath expanded card */
+#card-overlay {
+  cursor: pointer;
+}
+
+/* style the SVG close button */
+.card-close {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: rgba(27,30,46,0.8);
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1002;
+}
+.card-close .close-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+.card-subtitle *,
+.card-summary *,
+.card-detail *,
+.subcard-subtitle *,
+.subcard-summary *,
+.subcard-detail * {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 
@@ -672,3 +754,12 @@ footer {
   }
 
   /* 11) Buttons slightly larger and centered */
+/* ensure text wraps and stays inside the card */
+.detailed-card h3,
+.detailed-card p,
+.detailed-subcard h4,
+.detailed-subcard p {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
