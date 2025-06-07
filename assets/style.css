@@ -498,16 +498,7 @@ a.detailed-card p {
   height: 16px;
   display: block;
 }
-.card-subtitle *,
-.card-summary *,
-.card-detail *,
-.subcard-subtitle *,
-.subcard-summary *,
-.subcard-detail * {
-  display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
+
 
 
 /* ===========================
