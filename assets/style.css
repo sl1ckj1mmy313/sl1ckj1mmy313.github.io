@@ -294,7 +294,7 @@ nav.navbar {
   display: flex;
   justify-content: space-around;
   gap: 2em;
-  margin: 5em 0 5em 0; /* space above and below */
+  margin: 3em 0 5em 0; /* space above and below */
   flex-wrap: wrap;
   text-align: center;
 }
