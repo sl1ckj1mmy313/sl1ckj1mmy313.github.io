@@ -343,7 +343,7 @@ nav.navbar {
   cursor: pointer;
 }
 .detailed-card h3 {
-  color: rgba(0, 0, 0, .45);
+  color: rgba(255, 255, 255, .6);
   }
 .detailed-card:hover h3 {
   color: rgba(255, 255, 255, .9);
