@@ -113,6 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // Clone the card into the popup
       const popup = card.cloneNode(true);
       popup.classList.add('popup-clone');
+      //  ↓↓↓  NEW: restyle all images in the popup  ↓↓↓
+      popup.querySelectorAll('img').forEach(img => {
+        Object.assign(img.style, {
+          maxWidth: '150px',
+          height: '150px',
+          objectFit: 'contain',
+          display: 'block',
+          margin: '0 auto 1em'    // center if you like
+        });
+      });
       Object.assign(popup.style, {
         position: 'relative',
         width: isMobile() ? '95vw' : '80vw',

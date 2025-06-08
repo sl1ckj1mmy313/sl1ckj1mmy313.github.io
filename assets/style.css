@@ -63,9 +63,26 @@ h2, h3, h4, h5, h6, a {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-h5 {
-  font-weight: 1000; /* lighter for subheadings */
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
 }
+
+
+h5 {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+h6 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin: 0.75em auto; /* space between paragraphs */
+  max-width: 800px; /* limit width for readability */
+  }
 /* ===========================
    HIDE-ON-SCROLL (header + toggle)
    =========================== */
@@ -428,11 +445,16 @@ nav.navbar {
 
 
 .detailed-card img {
-  width: 100px;
-  max-height: 100px;
+  width: 55%;
+  height: 55%;
   object-fit: contain;
   user-select: none;
 
+}
+
+.detailed-card:hover img {
+  width: 70%;
+  height: 70%;
 }
 
 .detailed-card p {
@@ -543,23 +565,28 @@ a.detailed-card p {
   color: inherit; /* inherit color from parent */
 }
 
-.detailed-subcard .img-container img {
-  width: 90%;
-  height: 90%;
+.detailed-subcard img {
+  width: 80%;
+  height: 80%;
   object-fit: cover;
   user-select: none;
 }
 
-
+.detailed-subcard:hover img {
+  width: 125%;
+  height: 125%;
+  object-fit: cover;
+  user-select: none;
+}
 /* Label beneath the circle */
 .detailed-subcard h4 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
 
   margin-bottom: 0;
 }
 .detailed-subcard h5 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 500;
 
   margin-top: 0.25em;
