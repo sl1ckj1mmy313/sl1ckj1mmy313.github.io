@@ -6,27 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
   popupStyles.id = 'popup-scrollbar-styles';
   popupStyles.textContent = `
 .popup-clone::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: '8px',
+  height: '8px',
 }
 .popup-clone::-webkit-scrollbar-track {
-  background: #1b1e2e;
-  border-radius: 5px;
+  background: '#1b1e2e',
+  border-radius: '5px',
 }
 .popup-clone::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #41e0ff 0%, #726bff 100%);
-  border-radius: 5px;
+  background: 'linear-gradient(180deg, #41e0ff 0%, #726bff 100%)',
+  border-radius: '5px',
 }
 .popup-clone::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #72dfff 0%, #9c8eff 100%);
+  background: 'linear-gradient(180deg, #72dfff 0%, #9c8eff 100%)',
 }
 .popup-clone {
-  scrollbar-width: thin;
-  scrollbar-color: #41e0ff #1b1e2e;
+  scrollbar-width: 'thin',
+  scrollbar-color: '#41e0ff #1b1e2e',
 }
 @supports (-ms-overflow-style: none) {
   .popup-clone {
-    -ms-overflow-style: scrollbar;
+    -ms-overflow-style: 'scrollbar',
   }
 }
   `;
