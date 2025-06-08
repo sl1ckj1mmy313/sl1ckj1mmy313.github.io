@@ -1,7 +1,7 @@
 <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style="isolation:isolate">
   <style>
     .beam-origin {
-      animation: pulseBeam 2s ease-in-out infinite;
+      animation: pulseBeam 60s ease-in-out infinite;
     }
     .glow-aura {
       fill: url(#aura);

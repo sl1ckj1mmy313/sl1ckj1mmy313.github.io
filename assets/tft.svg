@@ -27,9 +27,6 @@
     }
   </style>
 
-  <!-- Background -->
-  <rect class="bg" width="64" height="64" rx="12"/>
-
   <!-- Left upper (F_L: blue) -->
   <path class="flow" d="M32 32 C24 24, 24 8, 32 8" stroke="url(#fl-up)"/>
 

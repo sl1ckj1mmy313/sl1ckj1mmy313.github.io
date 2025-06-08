@@ -40,9 +40,6 @@
     }
   </style>
 
-  <!-- Background -->
-  <rect class="bg" width="64" height="64" rx="12"/>
-
   <!-- Circular orbit (natural time) -->
   <circle class="ring" cx="32" cy="32" r="20"/>
 
