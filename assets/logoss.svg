@@ -11,7 +11,7 @@
       </feMerge>
     </filter>
 
-    <!-- Red gradient swirling -->
+    <!-- red orb gradient swirling over time -->
     <radialGradient id="redRad" cx="50%" cy="50%" r="50%" gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(68 63) rotate(0) translate(-68 -63)">
       <stop offset="0%"   stop-color="#FF3B58" stop-opacity="0.4"/>
@@ -21,11 +21,11 @@
                         type="rotate"
                         from="0 68 63"
                         to="360 68 63"
-                        dur="8s"
+                        dur="12s"
                         repeatCount="indefinite"/>
     </radialGradient>
 
-    <!-- Blue gradient swirling -->
+    <!-- blue orb gradient swirling in opposite direction -->
     <radialGradient id="blueRad" cx="50%" cy="50%" r="50%" gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(68 63) rotate(0) translate(-68 -63)">
       <stop offset="0%"   stop-color="#4FC9FF" stop-opacity="0.4"/>
@@ -35,15 +35,15 @@
                         type="rotate"
                         from="0 68 63"
                         to="-360 68 63"
-                        dur="8s"
+                        dur="12s"
                         repeatCount="indefinite"/>
     </radialGradient>
 
-    <!-- Violet highlight pulsing -->
+    <!-- paraflow purple stays static with gentle pulse -->
     <radialGradient id="violetRad" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#C15EFF" stop-opacity="0.2">
-        <animate attributeName="stop-opacity" dur="5s"
-                 values="0.1;0.4;0.1" repeatCount="indefinite"/>
+        <animate attributeName="stop-opacity" dur="6s"
+                 values="0.1;0.3;0.1" repeatCount="indefinite"/>
       </stop>
       <stop offset="100%" stop-color="#7A0F99" stop-opacity="0"/>
     </radialGradient>
@@ -58,47 +58,17 @@
   <g filter="url(#ds)" clip-path="url(#clip)">
 
 
-    <!-- energy-flow orbs blending via screen -->
+    <!-- orbs blend via screen, each now swirling -->
     <g style="mix-blend-mode:screen">
-      <!-- wrap each orb in its own group to animate slight motion -->
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="0,0; 2,1; -1,2; 0,0" dur="6s" repeatCount="indefinite"/>
-        <circle cx="102.047" cy="63.476" r="32" fill="url(#redRad)"/>
-      </g>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="0,0; -2,1; 1,-2; 0,0" dur="6s" begin="1s" repeatCount="indefinite"/>
-        <circle cx="51.023" cy="34.017" r="32" fill="url(#redRad)"/>
-      </g>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="0,0; 1,-2; -2,-1; 0,0" dur="6s" begin="2s" repeatCount="indefinite"/>
-        <circle cx="51.023" cy="92.935" r="32" fill="url(#redRad)"/>
-      </g>
+      <circle cx="102.047" cy="63.476" r="32" fill="url(#redRad)"/>
+      <circle cx="51.023"  cy="34.017" r="32" fill="url(#redRad)"/>
+      <circle cx="51.023"  cy="92.935" r="32" fill="url(#redRad)"/>
 
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="0,0; 2,-1; -1,2; 0,0" dur="6s" begin="0.5s" repeatCount="indefinite"/>
-        <circle cx="85.039" cy="34.017" r="32" fill="url(#blueRad)"/>
-      </g>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="0,0; -2,-1; 1,2; 0,0" dur="6s" begin="1.5s" repeatCount="indefinite"/>
-        <circle cx="34.015" cy="63.476" r="32" fill="url(#blueRad)"/>
-      </g>
-      <g>
-        <animateTransform attributeName="transform" type="translate"
-          values="0,0; 1,2; -2,1; 0,0" dur="6s" begin="2.5s" repeatCount="indefinite"/>
-        <circle cx="85.039" cy="92.935" r="32" fill="url(#blueRad)"/>
-      </g>
+      <circle cx="85.039"  cy="34.017" r="32" fill="url(#blueRad)"/>
+      <circle cx="34.015"  cy="63.476" r="32" fill="url(#blueRad)"/>
+      <circle cx="85.039"  cy="92.935" r="32" fill="url(#blueRad)"/>
 
-      <!-- central paraflow highlight -->
-      <g>
-        <animateTransform attributeName="transform" type="scale"
-          values="1;1.05;1" dur="5s" begin="1s" repeatCount="indefinite"/>
-        <circle cx="68.031" cy="63.476" r="32" fill="url(#violetRad)"/>
-      </g>
+      <circle cx="68.031" cy="63.476" r="32" fill="url(#violetRad)"/>
     </g>
   </g>
 </svg>
