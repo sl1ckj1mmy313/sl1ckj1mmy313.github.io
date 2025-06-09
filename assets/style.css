@@ -6,8 +6,9 @@
     135deg,
     rgba(10, 25, 47, 0.9)    0%,   /* deep navy */
     rgba(55,  0, 110, 0.9)   50%,  /* midnight purple */
-    rgba(139,   0,   0, 0.9) 100%  /* rich, darker crimson */
+    rgba(90,   0,   0, 0.9) 100%   /* darker, moodier crimson */
   );
+
   /* Brighter text gradient */
   --text-gradient: linear-gradient(
     135deg,
@@ -58,7 +59,7 @@ h2, h3, h4, h5, h6, a {
   background: var(--text-gradient);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: white;
   /* subtle shadow for continuous readability */
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
@@ -66,7 +67,11 @@ h2, h3, h4, h5, h6, a {
 h2 {
   font-weight: 700;
   font-size: 2rem;
+  color: navy;
 }
+
+
+
 
 
 h5 {
@@ -210,6 +215,18 @@ body {
   transition: transform 0.6s ease-in-out,
               opacity 0.6s ease-in-out;
 }
+.card-detail .flow-symbol {
+  display: inline;         /* force it into text flow */
+  width: auto;             /* preserve SVG’s aspect ratio */
+  height: 1em;             /* same height as one line of text */
+  vertical-align: text-bottom; /* sit on the text baseline */
+  margin: 0 0.1em;         /* tiny side gutter, no line breaks */
+  padding: 0;              /* remove any extra padding */
+  float: none;             /* ensure it’s not being floated */
+  white-space: normal;     /* allow normal wrapping around it */
+}
+
+
 
 /* ===========================
    LOGO & STACKED TEXT
@@ -339,7 +356,7 @@ nav.navbar {
   display: inline-block;
   padding: 0.75em 1.5em;
   margin: 0.5em;
-  background: var(--background-gradient);
+  background: var(--text-gradient);
   background-size: 200% 100%;
   background-position: 0 0;
   color: #fff;
@@ -403,12 +420,19 @@ nav.navbar {
   cursor: pointer;
 }
 
-.detailed-card:hover h3 {
+.detailed-card:hover h3, .detailed-subcard:hover h4 {
+  color: navy;
+}
+.detailed-card:hover h4 {
+  color: #a160f0; /* luminous violet */
+}
+detailed-subcard:hover h5 {
+  color: #a160f0; /* luminous violet */
+}
+.detailed-card p {
   color: rgba(255, 255, 255, .75);
 }
-.detailed-subcard:hover h4 {
-  color: rgba(255, 255, 255, .9);
-}
+
 
 .detailed-card:nth-child(1) { animation-delay: 0.1s; }
 .detailed-card:nth-child(2) { animation-delay: 0.3s; }
@@ -582,13 +606,12 @@ a.detailed-card p {
 .detailed-subcard h4 {
   font-size: 1.1rem;
   font-weight: 600;
-
   margin-bottom: 0;
 }
 .detailed-subcard h5 {
   font-size: 0.9rem;
   font-weight: 500;
-
+  color: #a160f0; /* luminous violet */
   margin-top: 0.25em;
 }
 
