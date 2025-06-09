@@ -145,11 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
         transform: 'scale(0.95)',
         transition: 'opacity 300ms ease, transform 300ms ease',
         zIndex: '1001',
-        background: '#0f111a',
+        background: 'rgba(0, 0, 0, 0.01)',
         color: '#e0f7ff',
-        borderRadius: '12px',
+        borderRadius: '30px',
         padding: '1em',
-        boxShadow: '0 0 30px rgba(65, 224, 255, 0.3)'
+        boxShadow: ' 0 0 24px rgba(79, 209, 197, 0.4)'
       });
 
       // Reveal all content inside the popup
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.assign(el.style, {
           fontSize: '1.8em',
           fontWeight: '700',
-          color: '#ffffff',
+          color: '#41E0FF',
           marginBottom: '0.25em',
           fontFamily: 'Cinzel, serif'
         })
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.assign(el.style, {
           fontSize: '1.2em',
           fontWeight: '500',
-          color: '#a0e0ff',
+          color: '#a160f0',
           marginBottom: '0.5em',
           fontStyle: 'italic'
         })
@@ -184,15 +184,16 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.assign(el.style, {
           fontSize: '1em',
           lineHeight: '1.6',
-          color: '#c0ecff',
-          marginBottom: '0.75em'
+          color: '#a0e0ff',
+          margin: '0.75em 0',
+          wordBreak: 'break-word'
         })
       );
       popup.querySelectorAll('.card-detail, .subcard-detail').forEach(el =>
         Object.assign(el.style, {
           fontSize: '0.95em',
           lineHeight: '1.7',
-          color: '#d0f7ff',
+          color: 'rgba (32, 32, 30, 1)',
           marginTop: '0.5em'
         })
       );
