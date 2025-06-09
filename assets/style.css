@@ -471,11 +471,6 @@ detailed-subcard:hover h5 {
 
 }
 
-.detailed-card:hover img {
-  width: 70%;
-  height: 70%;
-}
-
 .detailed-card p {
   font-weight: 600;
 

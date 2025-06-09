@@ -36,24 +36,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const isMobile = () => window.innerWidth <= 600;
   const tapState = new WeakMap(); // mobile tap tracking
 
-  // Create full-screen overlay with frosted blur
-  const overlay = document.createElement('div');
-  overlay.id = 'card-overlay';
-  Object.assign(overlay.style, {
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    right: '0',
-    bottom: '0',
-    background: 'rgba(0,0,0,0.6)',
-    display: 'none',
-    zIndex: '1000',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backdropFilter: 'blur(10px)',
-    WebkitBackdropFilter: 'blur(10px)'
-  });
-  document.body.appendChild(overlay);
+// Create full-screen overlay with frosted blur
+const overlay = document.createElement('div');
+overlay.id = 'card-overlay';
+Object.assign(overlay.style, {
+  position: 'fixed',
+  top: '0',
+  left: '0',
+  right: '0',
+  bottom: '0',
+  background: 'rgba(0,0,0,0.6)',   // default
+  display: 'none',
+  zIndex: '1000',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backdropFilter: 'blur(10px)',
+  WebkitBackdropFilter: 'blur(10px)',
+  transition: 'background 0.3s ease' // smooth fade
+});
+document.body.appendChild(overlay);
+
+// on hover, make it almost transparent; on leave, restore
+overlay.addEventListener('mouseenter', () => {
+  overlay.style.background = 'rgba(0, 0, 0, 0.01)';
+});
+overlay.addEventListener('mouseleave', () => {
+  overlay.style.background = 'rgba(0,0,0,0.6)';
+});
 
   cards.forEach(card => {
     const subs    = Array.from(card.querySelectorAll('.card-subtitle, .subcard-subtitle'));
