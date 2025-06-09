@@ -55,7 +55,7 @@ body.no-scroll {
 
 
 /* Apply to all your headings and paragraphs */
-h2, h3, h4, h5, h6, a {
+h1, h2, h3, h4, h5, h6, a {
   background: var(--text-gradient);
   -webkit-background-clip: text;
   background-clip: text;
@@ -253,28 +253,27 @@ img,
   margin-bottom: 2em;
   display: inline-block;
 }
-.logo-stack .line1, h1 {
+.logo-stack .line1 {
   font-size: 2.6rem;
   font-weight: 600;
   letter-spacing: 0.025em;
-
   margin-bottom: 0.1em;
 }
 .logo-stack .line2 {
   font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-
   margin-bottom: -0.25em;
 }
 .logo-stack .line3 {
   font-size: 1.7rem;
   font-weight: 500;
   letter-spacing: 0.25em;
-
   margin-top: 0.4em;
 }
-
+.line1, .line2, .line3 {
+  color: white;
+}
 /* ===========================
    HAMBURGER / MENU TOGGLE
    =========================== */
