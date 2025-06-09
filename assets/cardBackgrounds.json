@@ -1,0 +1,27 @@
+{
+  "land_regeneration": {
+    "day": [
+      "assets/cards/jpg/land_regeneration/day/creek.png",
+      "assets/cards/jpg/land_regeneration/day/creek_with_bird.png",
+      "assets/cards/jpg/land_regeneration/day/deer_by_creek.png",
+      "assets/cards/jpg/land_regeneration/day/bear_by_creek.png"
+    ],
+    "night": [
+      "assets/cards/jpg/land_regeneration/night/creek_night.png",
+      "assets/cards/jpg/land_regeneration/night/creek_night(2).png",
+      "assets/cards/jpg/land_regeneration/night/creek_portrait_night.png",
+      "assets/cards/jpg/land_regeneration/night/deer_by_creek.png",
+      "assets/cards/jpg/land_regeneration/night/bear_by_creek.png"
+    ]
+  },
+  "public_education": {
+    "day": [
+      "assets/day/edu1.jpg",
+      "assets/day/edu2.jpg"
+    ],
+    "night": [
+      "assets/night/edu1.jpg",
+      "assets/night/edu2.jpg"
+    ]
+  }
+}

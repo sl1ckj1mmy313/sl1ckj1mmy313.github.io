@@ -228,48 +228,60 @@ body {
    LOGO & STACKED TEXT
    =========================== */
 .logo {
-  width: 150px;
-  margin-bottom: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  width: 200px;
+  margin: 0.5em 0 0 0;  /* no bottom/top, small right gap */
 }
-#loader,
-.logo,
-img,
-.logo-stack div {
+
+.logo-stack {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  margin: 0;            /* no extra vertical spacing */
+}
+
+.logo-stack .line1,
+.logo-stack .line2,
+.logo-stack .line3 {
+  margin: 0;            /* collapse any default margins */
+}
+
+.logo-stack .line1 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.logo-stack .line2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.logo-stack .line3 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  margin-top: 0.25em;   /* tiny gap if you still want a bit */
+}
+
+.logo, img, .logo-stack div {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
 }
-.logo-stack {
-  font-family: 'Cinzel', serif;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1;
-  margin-top: 0.75em;
-  margin-bottom: 2em;
-  display: inline-block;
-}
-.logo-stack .line1 {
-  font-size: 2.6rem;
-  font-weight: 600;
-  letter-spacing: 0.025em;
-  margin-bottom: 0.1em;
-}
-.logo-stack .line2 {
-  font-size: 2.6rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  margin-bottom: -0.25em;
-}
-.logo-stack .line3 {
-  font-size: 1.7rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  margin-top: 0.4em;
-}
-.line1, .line2, .line3 {
+
+.line1,
+.line2,
+.line3 {
   color: white;
 }
+
 /* ===========================
    HAMBURGER / MENU TOGGLE
    =========================== */
@@ -378,7 +390,7 @@ nav.navbar {
   /* classic frosted-glass blur */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
+  margin-top: 2em;
   border-radius: 30px;
   padding: 2em;
   margin: 0 auto 2em;

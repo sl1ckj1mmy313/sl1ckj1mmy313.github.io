@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="181.413" height="169.267" viewBox="0 0 136.06 126.95">
+  <defs>
+    <!-- subtle drop‐shadow for depth -->
+    <filter id="ds">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feOffset   in="blur" dx="0" dy="4" result="off"/>
+      <feMerge>
+        <feMergeNode in="off"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- mid-tone red gradient for F_D (dark flow) -->
+    <radialGradient id="redRad" cx="50%" cy="50%" r="50%" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(68 63) rotate(0) translate(-68 -63)">
+      <stop offset="0%"   stop-color="#FF9999" stop-opacity="0.6"/>
+      <stop offset="50%"  stop-color="#FF6666" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FF6666" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="rotate"
+                        from="0 68 63" to="360 68 63" dur="8s" repeatCount="indefinite"/>
+    </radialGradient>
+
+    <!-- mid-tone blue gradient for F_L (light flow) -->
+    <radialGradient id="blueRad" cx="50%" cy="50%" r="50%" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(68 63) rotate(0) translate(-68 -63)">
+      <stop offset="0%"   stop-color="#99CCFF" stop-opacity="0.6"/>
+      <stop offset="50%"  stop-color="#6699FF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#6699FF" stop-opacity="0"/>
+      <animateTransform attributeName="gradientTransform" type="rotate"
+                        from="0 68 63" to="-360 68 63" dur="8s" repeatCount="indefinite"/>
+    </radialGradient>
+
+    <!-- ultra-purple for all overlaps -->
+    <radialGradient id="violetRad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#FF00FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#550055" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <g filter="url(#ds)">
+    <!-- Orbs: overlay blend for richer purple mixing -->
+    <g style="mix-blend-mode:overlay">
+      <!-- Red orbs -->
+      <circle cx="102.047" cy="63.476" r="32" fill="url(#redRad)"/>
+      <circle cx="51.023"  cy="34.017" r="32" fill="url(#redRad)"/>
+      <circle cx="51.023"  cy="92.935" r="32" fill="url(#redRad)"/>
+
+      <!-- Blue orbs -->
+      <circle cx="85.039"  cy="34.017" r="32" fill="url(#blueRad)"/>
+      <circle cx="34.015"  cy="63.476" r="32" fill="url(#blueRad)"/>
+      <circle cx="85.039"  cy="92.935" r="32" fill="url(#blueRad)"/>
+    </g>
+
+    <!-- Ultra-purple highlights at red–red & blue–blue overlaps -->
+    <g style="mix-blend-mode:screen">
+      <!-- Red–Red overlaps -->
+      <circle cx="76.535" cy="48.7465" r="12" fill="url(#violetRad)"/>
+      <circle cx="76.535" cy="78.2055" r="12" fill="url(#violetRad)"/>
+      <circle cx="51.023" cy="63.476" r="12" fill="url(#violetRad)"/>
+
+      <!-- Blue–Blue overlaps -->
+      <circle cx="59.527" cy="48.7465" r="20" fill="url(#violetRad)"/>
+      <circle cx="59.527" cy="78.2055" r="20" fill="url(#violetRad)"/>
+      <circle cx="85.039" cy="63.476" r="20" fill="url(#violetRad)"/>
+
+      <!-- central paraflow orb -->
+      <circle cx="68.031" cy="63.476" r="32" fill="url(#violetRad)"/>
+    </g>
+  </g>
+</svg>
