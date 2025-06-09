@@ -67,7 +67,7 @@ h2, h3, h4, h5, h6, a {
 h2 {
   font-weight: 700;
   font-size: 2rem;
-  color: navy;
+  color: #41E0FF;
 }
 
 
@@ -421,7 +421,7 @@ nav.navbar {
 }
 
 .detailed-card:hover h3, .detailed-subcard:hover h4 {
-  color: navy;
+  color: #41E0FF; /* brighter navy-blue */
 }
 .detailed-card:hover h4 {
   color: #a160f0; /* luminous violet */
